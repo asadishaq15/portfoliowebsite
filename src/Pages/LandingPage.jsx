@@ -5,6 +5,8 @@ import Hero from '../Components/Hero';
 import FeaturedPortfolio from '../Components/ProjectsCards';
 import VideoGrid from '../Components/VideoGrid';
 import AboutAgency from '../Components/About';
+import TestimonialCarousel from '../Components/Testimonials';
+import BlogSection from '../Components/BlogCards';
 
 
 const LandingPage = () => {
@@ -14,6 +16,8 @@ const LandingPage = () => {
       <FeaturedPortfolio />
       <VideoGrid/>
       <AboutAgency/>
+      <TestimonialCarousel/>
+      <BlogSection/>
     </div>
   );
 };
