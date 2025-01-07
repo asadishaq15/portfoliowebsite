@@ -24,7 +24,7 @@ const JourneySection = () => {
 
     // Reduced animation height by multiplying with a smaller factor
     tl.to(titleRef.current, {
-      y: window.innerHeight * 0.6, // Reduced from 0.8 to 0.4
+      y: window.innerHeight * 0.5, // Reduced from 0.8 to 0.4
       ease: 'linear',
     });
 
