@@ -79,8 +79,8 @@ const BlogSection = () => {
           </div>
   
           <div className="md:hidden flex justify-center mt-8">
-            <button className="bg-[#E97F4E] text-white w-32 h-32 rounded-full text-lg font-medium hover:bg-[#d17346] transition-colors flex items-center justify-center">
-              Read All
+            <button className="bg-[#E97F4E] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-[#d17346] transition-colors">
+              Read All Blogs
             </button>
           </div>
         </div>
