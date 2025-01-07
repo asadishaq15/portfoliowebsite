@@ -8,6 +8,7 @@ import AboutAgency from '../Components/About';
 import TestimonialCarousel from '../Components/Testimonials';
 import BlogSection from '../Components/BlogCards';
 import MarqueeText from '../Components/MarqueeText';
+import LogoMarquee from '../Components/LogoMarquee';
 
 
 const LandingPage = () => {
@@ -15,6 +16,7 @@ const LandingPage = () => {
     <div>
       <Hero />
       <FeaturedPortfolio />
+      <LogoMarquee/>
       <VideoGrid/>
       <AboutAgency/>
       <TestimonialCarousel/>
