@@ -9,6 +9,7 @@ import TestimonialCarousel from '../Components/Testimonials';
 import BlogSection from '../Components/BlogCards';
 import MarqueeText from '../Components/MarqueeText';
 import LogoMarquee from '../Components/LogoMarquee';
+import JourneySection from '../Components/Journey';
 
 
 const LandingPage = () => {
@@ -19,6 +20,7 @@ const LandingPage = () => {
       <LogoMarquee/>
       <VideoGrid/>
       <AboutAgency/>
+      <JourneySection/>
       <TestimonialCarousel/>
       <BlogSection/>
       <MarqueeText/>
