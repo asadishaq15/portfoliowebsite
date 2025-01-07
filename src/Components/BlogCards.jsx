@@ -2,6 +2,7 @@ import React from 'react';
 import blog1 from "../assets/blog/blog1.png"
 import blog2 from "../assets/blog/blog2.png"
 import blog3 from "../assets/blog/blog3.png"
+import GradientButton from './GradientButton';
 
 const BlogSection = () => {
     const blogs = [
@@ -35,9 +36,9 @@ const BlogSection = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">
               Dive into our blogs
             </h1>
-            <button className="hidden md:block bg-[#E97F4E] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-[#d17346] transition-colors">
-              Read All Blogs
-            </button>
+            <GradientButton>
+            Read All Blogs
+            </GradientButton>
           </div>
   
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -79,9 +80,10 @@ const BlogSection = () => {
           </div>
   
           <div className="md:hidden flex justify-center mt-8">
-            <button className="bg-[#E97F4E] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-[#d17346] transition-colors">
-              Read All Blogs
-            </button>
+            <GradientButton>
+            Read All Blogs
+            </GradientButton>
+
           </div>
         </div>
       </div>

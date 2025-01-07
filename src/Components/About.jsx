@@ -1,4 +1,5 @@
 import React from 'react';
+import GradientButton from './GradientButton';
 
 const AboutAgency = () => {
     return (
@@ -14,9 +15,9 @@ const AboutAgency = () => {
             {/* Left Section (hidden on mobile) */}
             <div className="hidden lg:block lg:w-1/3">
               <h2 className="text-4xl font-bold mb-8">About Our Agency</h2>
-              <button className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold hover:opacity-90 transition-opacity">
-                Know More About Us
-              </button>
+              <GradientButton>
+            Know More About Us
+            </GradientButton>
             </div>
   
             {/* Right Section */}
@@ -58,9 +59,10 @@ const AboutAgency = () => {
 
           {/* Bottom Button (only visible on mobile) */}
           <div className="lg:hidden mt-8">
-            <button className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold hover:opacity-90 transition-opacity">
-              Know More About Us
-            </button>
+            <GradientButton>
+            Know More About Us
+            </GradientButton>
+      
           </div>
         </div>
       </div>

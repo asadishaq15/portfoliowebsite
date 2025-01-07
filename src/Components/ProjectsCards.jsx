@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useMediaQuery } from 'react-responsive';
+import GradientButton from './GradientButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -141,9 +142,9 @@ const ProjectsCards = () => {
             Our Handpicked Featured Portfolio
           </h2>
           {!isMobile && (
-            <button className="px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-[#D76B30] to-[#2D9B8A] text-white rounded-full text-base md:text-lg font-medium hover:opacity-90 transition-opacity duration-300 border-2 border-[#FFFFFF] shadow-lg">
-              See All Projects
-            </button>
+             <GradientButton>
+             See All Projects
+       </GradientButton>
           )}
         </div>
 
@@ -162,9 +163,10 @@ const ProjectsCards = () => {
           ))}
           
           {isMobile && (
-            <button className="w-full max-w-[400px] px-6 py-3 bg-gradient-to-r from-[#D76B30] to-[#2D9B8A] text-white rounded-full text-lg font-medium hover:opacity-90 transition-opacity duration-300 border-2 border-[#FFFFFF] shadow-lg mt-4">
-              See All Projects
-            </button>
+            <GradientButton>
+                  See All Projects
+            </GradientButton>
+
           )}
         </div>
       </div>
