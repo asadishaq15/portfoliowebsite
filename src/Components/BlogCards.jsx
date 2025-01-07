@@ -1,23 +1,25 @@
 import React from 'react';
-
+import blog1 from "../assets/blog/blog1.png"
+import blog2 from "../assets/blog/blog2.png"
+import blog3 from "../assets/blog/blog3.png"
 const BlogSection = () => {
     const blogs = [
       {
-        image: "/path-to-image1.jpg", // Replace with actual image paths
+        image: blog1, // Replace with actual image paths
         category: "NEWS",
         title: "StoryStream's Video Production Career Opportunities and Upcoming Event",
         author: "Michael Carter",
         date: "Aug 29, 2023"
       },
       {
-        image: "/path-to-image2.jpg",
+        image: blog2,
         category: "TIPS & TRICKS",
         title: "Mastering the Art of Storytelling: The Power of Narrative in Video Production",
         author: "Michael Carter",
         date: "Oct 17, 2023"
       },
       {
-        image: "/path-to-image3.jpg",
+        image: blog3,
         category: "STORIES",
         title: "Lights, Camera, Action! Behind the Scenes of a Video Production",
         author: "John Davis",
