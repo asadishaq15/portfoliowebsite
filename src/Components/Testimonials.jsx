@@ -1,5 +1,5 @@
 // TestimonialCarousel.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaQuoteRight } from 'react-icons/fa';
@@ -20,11 +20,21 @@ const testimonials = [
         author: "EMILY RODRIGUEZ",
         position: "Creative Director, TechVision Solutions"
     },
-    // Add more testimonials as needed
 ];
 
 const TestimonialCarousel = () => {
     const [[page, direction], setPage] = useState([0, 0]);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const paginate = (newDirection) => {
         const newPage = page + newDirection;
@@ -39,7 +49,7 @@ const TestimonialCarousel = () => {
 
     const variants = {
         enter: (direction) => ({
-            x: direction > 0 ? 1000 : -1000,
+            x: direction > 0 ? (isMobile ? 300 : 1000) : (isMobile ? -300 : -1000),
             opacity: 0
         }),
         center: {
@@ -49,13 +59,13 @@ const TestimonialCarousel = () => {
         },
         exit: (direction) => ({
             zIndex: 0,
-            x: direction < 0 ? 1000 : -1000,
+            x: direction < 0 ? (isMobile ? 300 : 1000) : (isMobile ? -300 : -1000),
             opacity: 0
         })
     };
 
     return (
-        <div className="relative min-h-[120vh] w-full bg-black bg-opacity-95 overflow-hidden">
+        <div className="relative min-h-screen w-full bg-black bg-opacity-95 overflow-hidden">
             <div 
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ 
@@ -64,14 +74,13 @@ const TestimonialCarousel = () => {
                 }}
             />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
-                <h1 className="text-white text-center text-5xl font-semibold mb-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 py-10 md:py-20">
+                <h1 className="text-white text-center text-3xl md:text-5xl font-semibold mb-10 md:mb-20">
                     Our Client Chronicles:<br />
                     Stories that Make Us Smile!
                 </h1>
 
-                {/* Increased height and width of the carousel container */}
-                <div className="relative max-w-[1400px] h-[500px] mx-auto">
+                <div className="relative max-w-[1400px] h-[600px] md:h-[500px] mx-auto">
                     <div className="absolute w-full h-full flex items-center justify-center">
                         <AnimatePresence initial={false} custom={direction}>
                             <motion.div
@@ -85,62 +94,59 @@ const TestimonialCarousel = () => {
                                     x: { type: "spring", stiffness: 300, damping: 30 },
                                     opacity: { duration: 0.2 }
                                 }}
-                                className="group absolute w-[1000px] bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-3xl p-12 border border-white/10 overflow-hidden"
+                                className="group absolute w-[90vw] md:w-[1000px] bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-3xl p-6 md:p-12 border border-white/10 overflow-hidden"
                                 style={{
                                     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
                                 }}
                             >
-                                {/* Flash effect */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
 
-                                {/* Logo */}
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="bg-white bg-opacity-20 px-4 py-2 rounded">
-                                        <p className="text-gray-300 text-sm font-medium">
+                                <div className="flex items-center gap-4 mb-6 md:mb-8">
+                                    <div className="bg-white bg-opacity-20 px-3 md:px-4 py-1 md:py-2 rounded">
+                                        <p className="text-gray-300 text-xs md:text-sm font-medium">
                                             {testimonials[page].logo}
                                         </p>
                                     </div>
                                 </div>
 
-                                {/* Testimonial Text - Increased font size */}
-                                <div className="mb-8">
-                                    <p className="text-white text-4xl font-light leading-relaxed">
+                                <div className="mb-6 md:mb-8">
+                                    <p className="text-white text-xl md:text-4xl font-light leading-relaxed">
                                         {testimonials[page].text}
                                     </p>
                                 </div>
 
-                                {/* Author Info - Increased spacing */}
-                                <div className="text-gray-400 mt-12">
-                                    <p className="text-xl font-medium">{testimonials[page].author}</p>
-                                    <p className="text-base">{testimonials[page].position}</p>
+                                <div className="text-gray-400 mt-8 md:mt-12">
+                                    <p className="text-lg md:text-xl font-medium">{testimonials[page].author}</p>
+                                    <p className="text-sm md:text-base">{testimonials[page].position}</p>
                                 </div>
 
-                                {/* Quote Icon */}
-                                <div className="absolute bottom-12 right-12 opacity-20">
-                                    <FaQuoteRight className="text-white text-7xl" />
+                                <div className="absolute bottom-6 md:bottom-12 right-6 md:right-12 opacity-20">
+                                    <FaQuoteRight className="text-white text-4xl md:text-7xl" />
                                 </div>
                             </motion.div>
                         </AnimatePresence>
                     </div>
 
-                    {/* Navigation Buttons - Adjusted positions */}
                     <button 
                         onClick={() => paginate(-1)}
-                        className="absolute left-10 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-4 rounded-full z-20 transition-all duration-300"
+                        className="absolute left-2 md:left-10 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 md:p-4 rounded-full z-20 transition-all duration-300"
                     >
-                        <FiChevronLeft className="text-white text-2xl" />
+                        <FiChevronLeft className="text-white text-xl md:text-2xl" />
                     </button>
 
                     <button 
                         onClick={() => paginate(1)}
-                        className="absolute right-10 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-4 rounded-full z-20 transition-all duration-300"
+                        className="absolute right-2 md:right-10 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 md:p-4 rounded-full z-20 transition-all duration-300"
                     >
-                        <FiChevronRight className="text-white text-2xl" />
+                        <FiChevronRight className="text-white text-xl md:text-2xl" />
                     </button>
 
-                    {/* Partial Cards - Adjusted size and position */}
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/4 w-[1000px] h-[500px] bg-[rgba(255,255,255,0.02)] rounded-3xl transform scale-95 blur-sm" />
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[1000px] h-[500px] bg-[rgba(255,255,255,0.02)] rounded-3xl transform scale-95 blur-sm" />
+                    {!isMobile && (
+                        <>
+                            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/4 w-[1000px] h-[500px] bg-[rgba(255,255,255,0.02)] rounded-3xl transform scale-95 blur-sm hidden md:block" />
+                            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[1000px] h-[500px] bg-[rgba(255,255,255,0.02)] rounded-3xl transform scale-95 blur-sm hidden md:block" />
+                        </>
+                    )}
                 </div>
             </div>
         </div>
