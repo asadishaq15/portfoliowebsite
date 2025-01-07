@@ -7,6 +7,7 @@ import VideoGrid from '../Components/VideoGrid';
 import AboutAgency from '../Components/About';
 import TestimonialCarousel from '../Components/Testimonials';
 import BlogSection from '../Components/BlogCards';
+import MarqueeText from '../Components/MarqueeText';
 
 
 const LandingPage = () => {
@@ -18,6 +19,7 @@ const LandingPage = () => {
       <AboutAgency/>
       <TestimonialCarousel/>
       <BlogSection/>
+      <MarqueeText/>
     </div>
   );
 };
