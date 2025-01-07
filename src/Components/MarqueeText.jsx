@@ -137,7 +137,7 @@ const MarqueeText = () => {
           </motion.span>
         </div>
         <motion.div
-          className="w-3 h-3 rounded-full bg-red-500"
+          className="w-4 h-4 rounded-full bg-red-500"
           animate={{
             scale: isHovered ? 1.5 : 1,
             opacity: [1, 0.5, 1]
