@@ -2,13 +2,38 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GradientButton from './GradientButton';
-
+import img from "../assets/blog/blog2.png"
 gsap.registerPlugin(ScrollTrigger);
 
 const JourneySection = () => {
   const titleRef = useRef(null);
   const containerRef = useRef(null);
   const [expandedCard, setExpandedCard] = useState(null);
+
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: 'bottom center',
+          scrub: true,
+          markers: false,
+          pin: false,
+          smoothChildTiming: true,
+        }
+      });
+
+      tl.to(titleRef.current, {
+        y: window.innerHeight * 0.5,
+        ease: 'linear',
+      });
+
+      return () => {
+        tl.kill();
+      };
+    }
+  }, []);
 
   const cardDetails = {
     'Post-Production': [
@@ -39,46 +64,25 @@ const JourneySection = () => {
     ]
   };
 
-  useEffect(() => {
-    if (window.innerWidth > 768) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom center',
-          scrub: true,
-          markers: false,
-          pin: false,
-          smoothChildTiming: true,
-        }
-      });
-
-      tl.to(titleRef.current, {
-        y: window.innerHeight * 0.5,
-        ease: 'linear',
-      });
-
-      return () => {
-        tl.kill();
-      };
-    }
-  }, []);
-
+  
   const cards = [
     {
       title: 'Pre-Production',
       description:
         'Pre-production serves as the pivotal phase in any creative endeavor, encompassing planning, idea refinement, budgeting, schedule creation, and the meticulous organization of logistical details.',
+      image: img
     },
     {
       title: 'Production', 
       description:
         'Production represents the dynamic phase of a creative project, where the plans from pre-production spring to life, with cameras rolling, actors delivering their performances, and the realization of the creative vision.',
+      image: img
     },
     {
       title: 'Post-Production',
       description:
         'Post-production is where the magic comes together, combining all elements into a cohesive final product through editing, sound design, visual effects, and careful refinement.',
+      image: img
     },
   ];
 
@@ -97,9 +101,31 @@ const JourneySection = () => {
 
         .card-container {
           position: relative;
-          overflow: hidden;
+          overflow: visible;
           transition: all 0.5s ease;
         }
+
+        .floating-image {
+          position: absolute;
+          top: -85%;
+          right: 10%;
+          width: 250px;
+          height: 280px;
+          object-fit: cover;
+          border-radius: 25px;
+          opacity: 0;
+          transform: translateX(100px) rotate(0deg);
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          pointer-events: none;
+          z-index: 20;
+          filter: grayscale(100%) brightness(0.8);
+        }
+
+        .card-container:hover .floating-image {
+            opacity: 1;
+            transform: translateX(-100px) rotate(-5deg); /* Modified translation and added rotation */
+            right: 20%; /* Adjusted final position */
+          }
 
         .card-container .gradient-overlay {
           animation: gradientMoveOut 1.5s ease-in-out forwards;
@@ -150,31 +176,30 @@ const JourneySection = () => {
         }
 
         .arrow-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px; /* Reduced width */
-            height: 24px; /* Reduced height */
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Reduced border size */
-            transition: all 0.3s ease;
-          }
-  
-          .arrow-icon {
-            transition: all 0.3s ease;
-            font-size: 0.75rem; /* Adjusted icon size */
-          }
-  
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .arrow-icon {
+          transition: all 0.3s ease;
+          font-size: 0.75rem;
+        }
 
         .learn-more-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-            font-size: 0.870rem; 
-          }
+          display: inline-flex;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          border: 1px solid rgba(255,255,255,0.3);
+          border-radius: 9999px;
+          transition: all 0.3s ease;
+          font-size: 0.870rem;
+        }
 
         .learn-more-btn:hover {
           border-color: #ff6b00;
@@ -212,6 +237,11 @@ const JourneySection = () => {
                 backdropFilter: 'blur(10px)',
               }}
             >
+              <img 
+                src={card.image}
+                alt={card.title}
+                className="floating-image"
+              />
               <div className="gradient-overlay" />
               <div className="relative z-10">
                 <h2 className="text-3xl font-semibold mb-4">{card.title}</h2>
