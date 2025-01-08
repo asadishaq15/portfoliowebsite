@@ -57,7 +57,7 @@ const VideoGrid = () => {
 
     return (
         <div className="w-full px-4 md:px-16 bg-black">
-            <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 text-white pt-8">
+            <h1 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white pt-8">
                 We're Video Pros in Many Industries!
             </h1>
 

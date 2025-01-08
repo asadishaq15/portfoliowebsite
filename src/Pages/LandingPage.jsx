@@ -16,11 +16,11 @@ const LandingPage = () => {
   return (
     <div>
       <Hero />
-      <FeaturedPortfolio />
       <LogoMarquee/>
+      <FeaturedPortfolio />
+      <JourneySection/>
       <VideoGrid/>
       <AboutAgency/>
-      <JourneySection/>
       <TestimonialCarousel/>
       <BlogSection/>
       <MarqueeText/>

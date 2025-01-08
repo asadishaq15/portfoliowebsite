@@ -41,7 +41,7 @@ const LogoMarquee = () => {
 
   return (
     <div className="w-full bg-black py-16 px-4">
-      <h1 className="text-center text-white text-4xl md:text-5xl font-light mb-12">
+      <h1 className="text-center text-white text-2xl md:text-4xl font-light mb-12">
         Standing Tall with Our Esteemed Brand Partners
       </h1>
 

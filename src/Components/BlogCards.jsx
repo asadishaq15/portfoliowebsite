@@ -33,7 +33,7 @@ const BlogSection = () => {
       <div className="bg-black w-full">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-8">
               Dive into our blogs
             </h1>
             <GradientButton>

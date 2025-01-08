@@ -75,7 +75,7 @@ const TestimonialCarousel = () => {
             />
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 py-10 md:py-20">
-                <h1 className="text-white text-center text-3xl md:text-5xl font-semibold mb-10 md:mb-20">
+                <h1 className="text-white text-center text-2xl md:text-3xl font-semibold mb-10 md:mb-20">
                     Our Client Chronicles:<br />
                     Stories that Make Us Smile!
                 </h1>
