@@ -32,9 +32,42 @@ const Footer = () => {
             className="space-y-6"
           >
             <Link to="/" className="text-2xl font-bold">Logo</Link>
-            <p className="text-gray-400 max-w-sm">
+            <p className="text-gray-400 max-w-sm font-syne">
               Creating compelling visual narratives that captivate audiences and drive meaningful engagement through innovative storytelling.
             </p>
+          </motion.div>
+
+          {/* Quick Links Section */}
+          <motion.div 
+            {...fadeInUp}
+            className="space-y-6"
+          >
+            <h3 className="text-xl font-semibold font-syne">Quick Links</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {['Home', 'Projects', 'About', 'Services', 'Contact', 'Blog', 'Terms and Conditions', 'Privacy Policy'].map((link, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  className="w-fit"
+                >
+                  <Link 
+                    to={`/${link.toLowerCase().replace(/ /g, '-')}`} // Convert spaces to hyphens for routing
+                    className="text-gray-400 hover:text-white transition-colors duration-300 relative group font-syne"
+                  >
+                    {link}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Social Links Section */}
+          <motion.div 
+            {...fadeInUp}
+            className="space-y-6"
+          >
+            <h4 className="text-xl font-bold mb-2 font-syne">Follow Us</h4>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -47,49 +80,6 @@ const Footer = () => {
                   {social.icon}
                 </motion.a>
               ))}
-            </div>
-          </motion.div>
-
-          {/* Quick Links Section */}
-          <motion.div 
-            {...fadeInUp}
-            className="space-y-6"
-          >
-            <h3 className="text-xl font-semibold">Quick Links</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {['Home', 'Projects', 'About', 'Services', 'Contact', 'Blog', 'Terms and Conditions', 'Privacy Policy'].map((link, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  className="w-fit"
-                >
-                  <Link 
-                    to={`/${link.toLowerCase().replace(/ /g, '-')}`} // Convert spaces to hyphens for routing
-                    className="text-gray-400 hover:text-white transition-colors duration-300 relative group"
-                  >
-                    {link}
-                    <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Map Section using iframe */}
-          <motion.div 
-            {...fadeInUp}
-            className="space-y-6"
-          >
-            <h4 className="text-xl font-bold mb-2">Find Us</h4>
-            <div className="w-full h-48 md:h-60">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198.05682701357803!2d-0.5911997844741369!3d51.50996567963467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876c1a1c5d1e5bb%3A0x4c2c5b7c2b2f0c4!2s260%20Bath%20Road%2C%20Slough%20SL1%204DX%2C%20UK!5e0!3m2!1sen!2suk!4v1634151950670!5m2!1sen!2suk"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-              ></iframe>
             </div>
           </motion.div>
         </div>

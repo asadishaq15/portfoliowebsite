@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GradientButton from './GradientButton';
-import img from "../assets/blog/blog2.png"
+import img from "../assets/blog/blog2.png";
+import img2 from "../assets/blog/blog1.png";
+import img3 from "../assets/blog/blog3.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const JourneySection = () => {
@@ -64,7 +66,6 @@ const JourneySection = () => {
     ]
   };
 
-  
   const cards = [
     {
       title: 'Pre-Production',
@@ -76,19 +77,26 @@ const JourneySection = () => {
       title: 'Production', 
       description:
         'Production represents the dynamic phase of a creative project, where the plans from pre-production spring to life, with cameras rolling, actors delivering their performances, and the realization of the creative vision.',
-      image: img
+      image: img2
     },
     {
       title: 'Post-Production',
       description:
         'Post-production is where the magic comes together, combining all elements into a cohesive final product through editing, sound design, visual effects, and careful refinement.',
-      image: img
+      image: img3
     },
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden">
+    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden pt-44">
+      <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet" />
       <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
+
+        body {
+          font-family: 'Syne', sans-serif;
+        }
+
         @keyframes gradientMoveIn {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
@@ -123,9 +131,9 @@ const JourneySection = () => {
 
         .card-container:hover .floating-image {
             opacity: 1;
-            transform: translateX(-100px) rotate(-5deg); /* Modified translation and added rotation */
-            right: 20%; /* Adjusted final position */
-          }
+            transform: translateX(-100px) rotate(-5deg);
+            right: 20%;
+        }
 
         .card-container .gradient-overlay {
           animation: gradientMoveOut 1.5s ease-in-out forwards;
@@ -213,7 +221,7 @@ const JourneySection = () => {
             className="md:sticky md:top-0"
             style={{ paddingTop: '5rem' }}
           >
-            <h1 className="text-2xl md:text-5xl font-playfair font-bold leading-tight">
+            <h1 className="text-2xl md:text-3xl font-syne font-bold leading-tight">
               From Concept<br />
               To Completion:<br />
               We've Got You<br />

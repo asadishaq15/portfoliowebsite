@@ -94,7 +94,7 @@ const YouTubeCard = ({ project }) => {
             }}
           >
             <div className="absolute inset-0 rounded-full border-2 border-gray-500 bg-white/20" />
-            <span className="relative font-playfair text-white text-sm font-semibold tracking-wider text-center whitespace-nowrap">
+            <span className="relative font-syne text-white text-sm font-light tracking-wider text-center whitespace-nowrap">
               WATCH<br />FULL VIDEO
             </span>
           </div>
@@ -118,7 +118,7 @@ const YouTubeCard = ({ project }) => {
         )}
         
         <div className="absolute bottom-8 left-8 text-white z-20">
-          <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+          <h3 className="text-2xl font-bold font-syne mb-2">{project.title}</h3>
           <p className="text-sm opacity-80">{project.subtitle}</p>
         </div>
       </div>
@@ -165,7 +165,7 @@ const ProjectsCards = () => {
     >
       <div className="container mx-auto px-4 py-8">
         <div className={`${isMobile ? 'text-center mb-12' : 'flex justify-between items-center mb-8'}`}>
-          <h2 className="text-2xl font-playfair md-text-4xl font-bold text-white mb-4 md:mb-0">
+          <h2 className="text-3xl font-syne md-text-4xl font-bold text-white mb-4 md:mb-0">
             Our Handpicked Featured Portfolio
           </h2>
           {!isMobile && (

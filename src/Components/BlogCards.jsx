@@ -33,7 +33,7 @@ const BlogSection = () => {
       <div className="bg-black w-full">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center mb-12">
-            <h1 className="text-2xl font-playfair md:text-3xl font-bold text-white mb-8">
+            <h1 className="text-2xl font-syne md:text-3xl font-bold text-white mb-8">
               Dive into our blogs
             </h1>
             <GradientButton>
@@ -55,20 +55,20 @@ const BlogSection = () => {
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                     <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <span className="text-white font-playfair font-medium text-lg">
+                      <span className="text-white font-syne text-base">
                         READ BLOG
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="p-8 transition-colors duration-500 group-hover:bg-[#1a1a1a]">
-                  <span className="text-[#E97F4E] text-sm font-semibold tracking-wider">
+                  <span className="text-[#E97F4E] text-sm font-semibold font-syne tracking-wider">
                     {blog.category}
                   </span>
-                  <h3 className="text-white text-xl font-bold mt-2 mb-4 hover:text-[#E97F4E] cursor-pointer transition-colors duration-300">
+                  <h3 className="text-white text-lg font-syne font-bold mt-2 mb-4 hover:text-[#E97F4E] cursor-pointer transition-colors duration-300">
                     {blog.title}
                   </h3>
-                  <div className="flex items-center text-gray-400 text-sm">
+                  <div className="flex items-center font-syne text-gray-400 text-sm">
                     <span className="mr-2">{blog.author}</span>
                     <span className="before:content-['•'] before:mx-2">
                       {blog.date}

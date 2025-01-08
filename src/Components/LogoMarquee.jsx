@@ -41,9 +41,9 @@ const LogoMarquee = () => {
 
   return (
     <div className="w-full bg-black py-16 px-4">
-      <h1 className="text-center text-white font-playfair text-2xl md:text-4xl font-light mb-12">
+      <h2 className="text-center text-white font-syne text-2xl md:text-3xl font-bold mb-12">
         Standing Tall with Our Esteemed Brand Partners
-      </h1>
+      </h2>
 
       <div className="relative w-full overflow-hidden">
         <div className="relative max-w-[90%] mx-auto overflow-hidden rounded-full border border-gray-800">

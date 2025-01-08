@@ -75,7 +75,7 @@ const TestimonialCarousel = () => {
             />
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 py-10 md:py-20">
-                <h1 className="text-white font-playfair text-center text-2xl md:text-3xl font-semibold mb-10 md:mb-20">
+                <h1 className="text-white font-syne text-center text-2xl md:text-3xl font-semibold mb-10 md:mb-20">
                     Our Client Chronicles:<br />
                     Stories that Make Us Smile!
                 </h1>
@@ -110,7 +110,7 @@ const TestimonialCarousel = () => {
                                 </div>
 
                                 <div className="mb-6 md:mb-8">
-                                    <p className="text-white text-xl md:text-4xl font-light leading-relaxed">
+                                    <p className="text-white text-xl md:text-4xl font-syne font-light leading-relaxed">
                                         {testimonials[page].text}
                                     </p>
                                 </div>

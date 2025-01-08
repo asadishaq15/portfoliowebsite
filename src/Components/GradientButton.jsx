@@ -38,7 +38,7 @@ const GradientButton = ({ children, onClick, className = '' }) => {
         ></div>
         
         {/* Button text */}
-        <span className="relative z-10">{children}</span>
+        <span className="relative z-10 font-syne">{children}</span>
       </button>
     );
   };

@@ -30,11 +30,11 @@ const Hero = () => {
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <h1 className="font-playfair text-white text-4xl md:text-6xl lg:text-7xl font-medium tracking-wide max-w-5xl leading-tight mb-6">
+        <h1 className="font-syne text-white text-4xl md:text-6xl lg:text-7xl font-medium tracking-wide max-w-5xl leading-tight mb-6">
           Turning Video into Vibrant Conversations.
         </h1>
         
-        <p className="font-playfair text-white/90 text-base md:text-lg lg:text-xl max-w-3xl mb-10">
+        <p className="font-syne text-white/90 text-base md:text-lg lg:text-xl max-w-3xl mb-10">
           We're your friendly video wizards creating fantastic commercials, corporate videos, social ads and many more.
         </p>
         

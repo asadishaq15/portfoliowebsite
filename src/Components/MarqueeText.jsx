@@ -30,12 +30,10 @@ const MarqueeText = () => {
       name: "Motion Graphics",
       image: Motiongrid
     },
-
     {
       name: "Visual Effects",
       image: vfx
     },
-  
     {
       name: "Storyboarding",
       image: ScriptWriting
@@ -94,9 +92,7 @@ const MarqueeText = () => {
               height: '200px'
             }}
           >
-            <div 
-              className="w-full h-full rounded-2xl overflow-hidden"
-            >
+            <div className="w-full h-full rounded-2xl overflow-hidden">
               <motion.div
                 className="w-full h-full bg-cover bg-center"
                 style={{
@@ -122,19 +118,29 @@ const MarqueeText = () => {
               />
             </div>
           </motion.div>
-          <motion.span 
-            className="text-gray-300 text-3xl font-light tracking-wider relative z-10"
-            animate={{
-              scale: isHovered ? 1.1 : 1,
-              color: isHovered ? '#ffffff' : '#d1d5db'
-            }}
-            transition={{
-              duration: 0.4,
-              ease: "easeOut"
-            }}
-          >
-            {service.name}
-          </motion.span>
+          <div className="relative">
+            <div className="absolute left-0 w-12 h-full bg-gradient-to-r from-black to-transparent z-20" />
+            <div className="absolute right-0 w-12 h-full bg-gradient-to-l from-black to-transparent z-20" />
+            <motion.span 
+              className="relative z-10 text-5xl font-bold tracking-wider"
+              style={{ 
+                fontFamily: 'Syne, sans-serif',
+                background: 'linear-gradient(90deg, #808080 0%, #A0A0A0 50%, #808080 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                display: 'inline-block',
+                padding: '0 10px'
+              }} 
+            
+              transition={{
+                duration: 0.4,
+                ease: "easeOut"
+              }}
+            >
+              {service.name}
+            </motion.span>
+          </div>
         </div>
         <motion.div
           className="w-4 h-4 rounded-full bg-red-500"

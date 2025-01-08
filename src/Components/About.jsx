@@ -40,7 +40,7 @@ const AboutAgency = () => {
             <div className="max-w-7xl mx-auto flex flex-col gap-12">
                 {/* Top Section (only visible on mobile) */}
                 <div className="lg:hidden">
-                    <h2 className="text-4xl font-bold mb-8">About Our Agency</h2>
+                    <h2 className="text-3xl font-syne mb-8">About Our Agency</h2>
                 </div>
 
                 {/* Content Section */}
@@ -50,7 +50,7 @@ const AboutAgency = () => {
                         <div className="h-full flex flex-col justify-between lg:sticky lg:top-0" style={{ paddingTop: '5rem' }}>
                             <h2 
                                 ref={titleRef} 
-                                className="text-4xl font-bold"
+                                className="text-3xl font-bold font-syne"
                             >
                                 About Our Agency
                             </h2>
@@ -79,20 +79,20 @@ const AboutAgency = () => {
 
                             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
                                 <div>
-                                    <h3 className="text-4xl lg:text-6xl font-bold text-gray-700">13+</h3>
-                                    <p className="text-sm uppercase tracking-wider mt-2">Years of Experience</p>
+                                    <h3 className="text-4xl font-syne lg:text-6xl font-bold text-gray-700">13+</h3>
+                                    <p className="text-sm font-syne uppercase tracking-wider mt-2">Years of Experience</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-4xl lg:text-6xl font-bold text-gray-700">200+</h3>
-                                    <p className="text-sm uppercase tracking-wider mt-2">Repeated Clients</p>
+                                    <h3 className="text-4xl font-syne lg:text-6xl font-bold text-gray-700">200+</h3>
+                                    <p className="text-sm font-syne uppercase tracking-wider mt-2">Repeated Clients</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-4xl lg:text-6xl font-bold text-gray-700">478</h3>
-                                    <p className="text-sm uppercase tracking-wider mt-2">Completed Projects</p>
+                                    <h3 className="text-4xl font-syne lg:text-6xl font-bold text-gray-700">478</h3>
+                                    <p className="text-sm font-syne uppercase tracking-wider mt-2">Completed Projects</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-4xl lg:text-6xl font-bold text-gray-700">350+</h3>
-                                    <p className="text-sm uppercase tracking-wider mt-2">Happy Clients</p>
+                                    <h3 className="text-4xl font-syne lg:text-6xl font-bold text-gray-700">350+</h3>
+                                    <p className="text-sm font-syne uppercase tracking-wider mt-2">Happy Clients</p>
                                 </div>
                             </div>
                         </div>
