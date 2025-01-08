@@ -188,7 +188,7 @@ const JourneySection = () => {
             className="md:sticky md:top-0"
             style={{ paddingTop: '5rem' }}
           >
-            <h1 className="text-2xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-2xl md:text-5xl font-playfair font-bold leading-tight">
               From Concept<br />
               To Completion:<br />
               We've Got You<br />

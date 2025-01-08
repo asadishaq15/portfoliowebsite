@@ -76,7 +76,7 @@ const VideoGrid = () => {
                                 <h2 className="text-xl font-semibold text-white">{card.title}</h2>
                                 <div>
                                     {expandedCard === card.id ? (
-                                        <p className="text-white/90 text-sm mb-2">{card.description}</p>
+                                        <p className="text-white/90 font-playfair text-sm mb-2">{card.description}</p>
                                     ) : null}
                                     <button
                                         onClick={() => setExpandedCard(expandedCard === card.id ? null : card.id)}
@@ -102,7 +102,7 @@ const VideoGrid = () => {
                         <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-transform duration-300">Corporate Videos</h2>
-                            <p className="text-white/90 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-playfair transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                                 Professional corporate video production services tailored to enhance your business communications.
                             </p>
                         </div>
@@ -117,7 +117,7 @@ const VideoGrid = () => {
                         <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-transform duration-300">Documentaries</h2>
-                            <p className="text-white/90 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-playfair  transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                                 Compelling storytelling through documentary filmmaking.
                             </p>
                         </div>
@@ -132,7 +132,7 @@ const VideoGrid = () => {
                         <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-transform duration-300">Shorts & Reels</h2>
-                            <p className="text-white/90 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-playfair transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                                 Engaging short-form content for social media platforms.
                             </p>
                         </div>
@@ -148,7 +148,7 @@ const VideoGrid = () => {
                         <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-transform duration-300">Entertainment</h2>
-                            <p className="text-white/90 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-playfair transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                                 Creative storytelling through cinematic narratives.
                             </p>
                         </div>
@@ -163,7 +163,7 @@ const VideoGrid = () => {
                         <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-transform duration-300">Commercials</h2>
-                            <p className="text-white/90 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-playfair transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                                 Impactful advertising solutions for your brand.
                             </p>
                         </div>
@@ -179,7 +179,7 @@ const VideoGrid = () => {
                         <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-transform duration-300">Live Streaming</h2>
-                            <p className="text-white/90 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-playfair transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                                 Professional live event coverage and streaming services.
                             </p>
                         </div>
@@ -194,7 +194,7 @@ const VideoGrid = () => {
                         <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-transform duration-300">Animation & VFX</h2>
-                            <p className="text-white/90 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-playfair transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                                 Stunning visual effects and animation services.
                             </p>
                         </div>

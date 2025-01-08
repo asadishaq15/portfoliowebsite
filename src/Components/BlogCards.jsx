@@ -33,7 +33,7 @@ const BlogSection = () => {
       <div className="bg-black w-full">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center mb-12">
-            <h1 className="text-2xl md:text-3xl font-bold text-white mb-8">
+            <h1 className="text-2xl font-playfair md:text-3xl font-bold text-white mb-8">
               Dive into our blogs
             </h1>
             <GradientButton>
@@ -55,7 +55,7 @@ const BlogSection = () => {
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                     <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <span className="text-white font-medium text-lg">
+                      <span className="text-white font-playfair font-medium text-lg">
                         READ BLOG
                       </span>
                     </div>
