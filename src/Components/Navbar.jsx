@@ -40,51 +40,51 @@ const Navbar = () => {
             <span className="text-white">Logo</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <Link
-              to="/"
-              className="text-white hover:text-orange-500 relative group transition-colors duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full hover:bg-[#1a1f37]"
-            >
-              Home
-              <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-            </Link>
-            <Link
-              to="/projects"
-              className="text-white hover:text-orange-500 relative group transition-colors duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full hover:bg-[#1a1f37]"
-            >
-              Projects
-              <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-            </Link>
-            <Link
-              to="/albums"
-              className="text-white hover:text-orange-500 relative group transition-colors duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full hover:bg-[#1a1f37]"
-            >
-              Albums
-              <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-            </Link>
-            <Link
-              to="/about"
-              className="text-white hover:text-orange-500 relative group transition-colors duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full hover:bg-[#1a1f37]"
-            >
-              About
-              <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-            </Link>
-            <Link
-              to="/services"
-              className="text-white hover:text-orange-500 relative group transition-colors duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full hover:bg-[#1a1f37]"
-            >
-              Services
-              <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-            </Link>
-            <Link
-              to="/blogs"
-              className="text-white hover:text-orange-500 relative group transition-colors duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full hover:bg-[#1a1f37]"
-            >
-              Blogs
-              <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-            </Link>
-          </div>
+      {/* Desktop Navigation */}
+<div className="hidden md:flex items-center space-x-6">
+  <Link
+    to="/"
+    className="text-white relative group transition-all duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full before:content-[''] before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 hover:text-orange-500 before:opacity-0 hover:before:opacity-100 before:bg-white/20"
+  >
+    Home
+    <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+  </Link>
+  <Link
+    to="/projects"
+    className="text-white relative group transition-all duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full before:content-[''] before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 hover:text-orange-500 before:opacity-0 hover:before:opacity-100 before:bg-white/20"
+  >
+    Projects
+    <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+  </Link>
+  <Link
+    to="/albums"
+    className="text-white relative group transition-all duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full before:content-[''] before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 hover:text-orange-500 before:opacity-0 hover:before:opacity-100 before:bg-white/20"
+  >
+    Albums
+    <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+  </Link>
+  <Link
+    to="/about"
+    className="text-white relative group transition-all duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full before:content-[''] before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 hover:text-orange-500 before:opacity-0 hover:before:opacity-100 before:bg-white/20"
+  >
+    About
+    <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+  </Link>
+  <Link
+    to="/services"
+    className="text-white relative group transition-all duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full before:content-[''] before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 hover:text-orange-500 before:opacity-0 hover:before:opacity-100 before:bg-white/20"
+  >
+    Services
+    <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+  </Link>
+  <Link
+    to="/blogs"
+    className="text-white relative group transition-all duration-500 font-['Montserrat'] text-sm px-6 py-2 rounded-full before:content-[''] before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 hover:text-orange-500 before:opacity-0 hover:before:opacity-100 before:bg-white/20"
+  >
+    Blogs
+    <span className="absolute bottom-0 left-1/2 w-10 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+  </Link>
+</div>
 
           {/* CTA Button */}
           <div className="hidden md:block">

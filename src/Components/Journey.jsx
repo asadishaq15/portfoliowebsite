@@ -10,27 +10,29 @@ const JourneySection = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top top',
-        end: 'bottom center',
-        scrub: true,
-        markers: false,
-        pin: false,
-        smoothChildTiming: true,
-      }
-    });
+    // Only run GSAP animation on desktop screens
+    if (window.innerWidth > 768) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: 'bottom center',
+          scrub: true,
+          markers: false,
+          pin: false,
+          smoothChildTiming: true,
+        }
+      });
 
-    // Reduced animation height by multiplying with a smaller factor
-    tl.to(titleRef.current, {
-      y: window.innerHeight * 0.5, // Reduced from 0.8 to 0.4
-      ease: 'linear',
-    });
+      tl.to(titleRef.current, {
+        y: window.innerHeight * 0.5,
+        ease: 'linear',
+      });
 
-    return () => {
-      tl.kill();
-    };
+      return () => {
+        tl.kill();
+      };
+    }
   }, []);
 
   const cards = [
@@ -53,15 +55,15 @@ const JourneySection = () => {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 py-16 flex">
+      <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row">
         {/* Left Section */}
-        <div className="w-1/3 pr-8 relative">
-          <div 
+        <div className="w-full md:w-1/3 md:pr-8 relative mb-8 md:mb-0">
+        <div 
             ref={titleRef} 
-            className="sticky top-0"
+            className="md:sticky md:top-0"
             style={{ paddingTop: '5rem' }}
           >
-            <h1 className="text-5xl font-bold leading-tight">
+            <h1 className="text-2xl md:text-5xl font-bold leading-tight">
               From Concept
               <br />
               To Completion:
@@ -71,16 +73,16 @@ const JourneySection = () => {
               Covered!
             </h1>
           </div>
-          {/* Added button at the bottom */}
-          <div className="absolute bottom-0 left-0">
-          <GradientButton>
-            Learn More
+          {/* Button only visible on desktop */}
+          <div className="hidden md:block absolute bottom-0 left-0">
+            <GradientButton>
+              Learn More
             </GradientButton>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="w-2/3 space-y-8">
+        <div className="w-full md:w-2/3 space-y-8">
           {cards.map((card, index) => (
             <div
               key={index}
@@ -116,6 +118,13 @@ const JourneySection = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* Button visible only on mobile, at the bottom */}
+        <div className="md:hidden mt-8 text-center">
+          <GradientButton>
+            Learn More
+          </GradientButton>
         </div>
       </div>
     </div>
