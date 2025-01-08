@@ -78,7 +78,7 @@ const YouTubeCard = ({ project }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
-        style={{ width: '400px', height: '400px' }}
+        style={{ width: '400px', height: '400px',  cursor: 'none'  }}
       >
         <div className={`absolute inset-0 bg-black/30 backdrop-blur-[2px] transition-opacity duration-300 z-10 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
         
