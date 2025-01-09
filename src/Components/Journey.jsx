@@ -94,65 +94,72 @@ const JourneySection = () => {
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
 
         body {
-          font-family: 'Syne', sans-serif;
-        }
-
-        @keyframes gradientMoveIn {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-
-        @keyframes gradientMoveOut {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-
-        .card-container {
-          position: relative;
-          overflow: visible;
-          transition: all 0.5s ease;
-        }
-
-        .floating-image {
-          position: absolute;
-          top: -85%;
-          right: 10%;
-          width: 250px;
-          height: 280px;
-          object-fit: cover;
-          border-radius: 25px;
-          opacity: 0;
-          transform: translateX(100px) rotate(0deg);
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          pointer-events: none;
-          z-index: 20;
-          filter: grayscale(100%) brightness(0.8);
-        }
-
-        .card-container:hover .floating-image {
+            font-family: 'Syne', sans-serif;
+          }
+        
+          @keyframes gradientMoveIn {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+          }
+        
+          @keyframes gradientMoveOut {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+          }
+        
+          .card-container {
+            position: relative;
+            overflow: visible;
+            transition: all 0.5s ease;
+          }
+        
+          .floating-image {
+            display: none; /* Hide by default on mobile */
+            position: absolute;
+            top: -85%;
+            right: 10%;
+            width: 250px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 25px;
+            opacity: 0;
+            transform: translateX(100px) rotate(0deg);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            z-index: 20;
+            filter: grayscale(100%) brightness(0.8);
+          }
+        
+          @media (min-width: 768px) {
+            .floating-image {
+              display: block; /* Show only on desktop */
+            }
+        
+            .card-container:hover .floating-image {
+              opacity: 1;
+              transform: translateX(-100px) rotate(-5deg);
+              right: 20%;
+            }
+          }
+        
+          .card-container .gradient-overlay {
+            animation: gradientMoveOut 1.5s ease-in-out forwards;
+          }
+        
+          .card-container:hover .gradient-overlay {
             opacity: 1;
-            transform: translateX(-100px) rotate(-5deg);
-            right: 20%;
-        }
-
-        .card-container .gradient-overlay {
-          animation: gradientMoveOut 1.5s ease-in-out forwards;
-        }
-
-        .card-container:hover .gradient-overlay {
-          opacity: 1;
-          animation: gradientMoveIn 1.5s ease-in-out forwards;
-        }
-
-        .card-container:hover .arrow-container {
-          transform: rotate(90deg);
-          background-color: rgba(255, 107, 0, 0.1);
-          border-color: #ff6b00;
-        }
-
-        .card-container:hover .arrow-icon {
-          color: #ff6b00;
-        }
+            animation: gradientMoveIn 1.5s ease-in-out forwards;
+          }
+        
+          .card-container:hover .arrow-container {
+            transform: rotate(90deg);
+            background-color: rgba(255, 107, 0, 0.1);
+            border-color: #ff6b00;
+          }
+        
+          .card-container:hover .arrow-icon {
+            color: #ff6b00;
+          }
 
         .gradient-overlay {
           opacity: 0;

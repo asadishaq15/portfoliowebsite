@@ -6,6 +6,8 @@ import './index.css'; // Ensure Tailwind CSS is imported here
 import Navbar from './Components/Navbar';
 import LandingPage from './Pages/LandingPage';
 import Footer from './Components/Footer';
+import Blogs from './Pages/Blogs';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Routes>
           {/* Define the route for the Home page */}
           <Route path="/" element={<LandingPage />} />
+          <Route path="/blogs" element={<Blogs />} />
         </Routes>
       </main>
       <Footer/>
