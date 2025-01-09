@@ -14,7 +14,7 @@ const GradientButton = ({ children, onClick, className = '' }) => {
         <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         
         {/* Red dot with black hole effect */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-red-600
+        <div className="absolute left-3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-red-600
           scale-0 group-hover:scale-150
           transition-all duration-700
           group-hover:shadow-[0_0_20px_2px_rgba(220,38,38,0.6)]
@@ -34,7 +34,9 @@ const GradientButton = ({ children, onClick, className = '' }) => {
           after:bg-red-600
           after:animate-[ping_1s_ease-in-out_infinite]
           after:opacity-0
-          group-hover:after:opacity-30"
+          group-hover:after:opacity-30
+          md:w-2 md:h-2"
+          
         ></div>
         
         {/* Button text */}
