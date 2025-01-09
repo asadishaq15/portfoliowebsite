@@ -94,7 +94,7 @@ const TestimonialCarousel = () => {
                                     x: { type: "spring", stiffness: 300, damping: 30 },
                                     opacity: { duration: 0.2 }
                                 }}
-                                className="group absolute w-[90vw] md:w-[1000px] bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-3xl p-6 md:p-12 border border-white/10 overflow-hidden"
+                                className="group absolute w-[80vw] md:w-[1000px] bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-3xl p-6 md:p-12 border border-white/10 overflow-hidden"
                                 style={{
                                     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
                                 }}
@@ -110,7 +110,7 @@ const TestimonialCarousel = () => {
                                 </div>
 
                                 <div className="mb-6 md:mb-8">
-                                    <p className="text-white text-xl md:text-4xl font-syne font-light leading-relaxed">
+                                    <p className="text-white text-base md:text-4xl font-syne font-light leading-relaxed">
                                         {testimonials[page].text}
                                     </p>
                                 </div>

@@ -3,37 +3,38 @@ import { Link } from "react-router-dom";
 import logo from "../assets/sampleLogo.png";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return (
-    <div className="fixed w-full z-50 flex justify-center items-center px-4 top-6">
-      <nav
-        className={`transition-all duration-300 rounded-full max-w-4xl w-full ${
-          scrolled ? "bg-black/30 backdrop-blur-[8px]" : "bg-transparent"
-        } ${isOpen ? "rounded-b-none rounded-t-full" : "rounded-full"}`}
-      >
-        <div className="flex justify-between items-center px-6 py-4">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <span className="text-white font-syne">Logo</span>
-          </Link>
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 50) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+  
+    return (
+      <div className="fixed w-full z-50 flex justify-center items-center px-4 top-6">
+        <nav
+          className={`transition-all duration-300 rounded-[30px] max-w-4xl w-full bg-gray-900/10 backdrop-blur-md ${
+            isOpen ? "!rounded-[30px]" : "rounded-[30px]"
+          }`}
+        >
+          <div className="flex justify-between items-center px-6 py-4">
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0">
+              <span className="text-white font-syne">Logo</span>
+            </Link>
+  
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
@@ -81,8 +82,8 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+           {/* CTA Button */}
+           <div className="hidden md:block">
             <Link
               to="/contact"
               className="bg-white text-black px-8 py-3 rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-300 font-syne text-base"
@@ -118,57 +119,57 @@ const Navbar = () => {
 
         {/* Mobile Navigation - Updated */}
         <div
-          className={`md:hidden bg-gray-900/40 backdrop-blur-md transition-all duration-300 overflow-hidden rounded-b-3xl ${
-            isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          className={`md:hidden transition-all duration-300 overflow-hidden ${
+            isOpen ? "max-h-[400px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
           }`}
         >
-          <div className="flex flex-col items-center py-6 px-8 space-y-4">
+          <div className="flex flex-col items-center space-y-4 px-4">
             <Link
               to="/"
-              className="text-white/90 hover:text-orange-500 font-syne text-base transition-colors duration-300"
+              className="w-full text-white/90 text-center hover:text-orange-500 font-syne text-base transition-colors duration-300 py-2 px-4 rounded-full hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/projects"
-              className="text-white/90 hover:text-orange-500 font-syne text-base transition-colors duration-300"
+              className="w-full text-white/90 text-center hover:text-orange-500 font-syne text-base transition-colors duration-300 py-2 px-4 rounded-full hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               Projects
             </Link>
             <Link
               to="/albums"
-              className="text-white/90 hover:text-orange-500 font-syne text-base transition-colors duration-300"
+              className="w-full text-white/90 text-center hover:text-orange-500 font-syne text-base transition-colors duration-300 py-2 px-4 rounded-full hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               Albums
             </Link>
             <Link
               to="/about"
-              className="text-white/90 hover:text-orange-500 font-syne text-base transition-colors duration-300"
+              className="w-full text-white/90 text-center hover:text-orange-500 font-syne text-base transition-colors duration-300 py-2 px-4 rounded-full hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link
               to="/services"
-              className="text-white/90 hover:text-orange-500 font-syne text-base transition-colors duration-300"
+              className="w-full text-white/90 text-center hover:text-orange-500 font-syne text-base transition-colors duration-300 py-2 px-4 rounded-full hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               Services
             </Link>
             <Link
               to="/blogs"
-              className="text-white/90 hover:text-orange-500 font-syne text-base transition-colors duration-300"
+              className="w-full text-white/90 text-center hover:text-orange-500 font-syne text-base transition-colors duration-300 py-2 px-4 rounded-full hover:bg-white/10"
               onClick={() => setIsOpen(false)}
             >
               Blogs
             </Link>
-            <div className="pt-2 w-full max-w-[200px]">
+            <div className="pt-2 w-full px-4">
               <Link
                 to="/contact"
-                className="inline-block w-full text-center bg-white/90 text-black py-2.5 rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-300 font-syne text-sm"
+                className="block w-full text-center bg-white text-black py-2.5 rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-300 font-syne text-sm"
                 onClick={() => setIsOpen(false)}
               >
                 Let's Talk
