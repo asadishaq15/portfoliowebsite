@@ -10,8 +10,7 @@ import BlogSection from '../Components/BlogCards';
 import MarqueeText from '../Components/MarqueeText';
 import LogoMarquee from '../Components/LogoMarquee';
 import JourneySection from '../Components/Journey';
-import HeroSection from '../Components/ReusableComponent';
-import bgimg from '../assets/bg/testmonialsBg.png'
+
 
 const LandingPage = () => {
   return (
@@ -23,11 +22,6 @@ const LandingPage = () => {
       <VideoGrid/>
       <AboutAgency/>
       <TestimonialCarousel/>
-      <HeroSection 
-      backgroundImage={bgimg}
-      title="Blogs"
-      description="Explore our blog hub, where we serve up a delightful mix of insightful articles, tips, and fun reads, tailored to spark your curiosity and inspire your creativity."
-    />
       <BlogSection/>
       <MarqueeText/>
     </div>
