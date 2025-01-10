@@ -28,6 +28,7 @@ const testimonials = [
     },
 ];
 
+
 const TestimonialCarousel = () => {
     const [[page, direction], setPage] = useState([0, 0]);
     const [isMobile, setIsMobile] = useState(false);

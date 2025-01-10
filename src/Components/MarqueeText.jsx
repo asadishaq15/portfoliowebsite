@@ -6,6 +6,7 @@ import ScriptWriting from "../assets/Services/scriptwriting.png";
 import soundDesign from "../assets/Services/sounddesign.png";
 import vfx from "../assets/Services/vfx.png";
 
+
 const MarqueeText = () => {
   const [hoveredService, setHoveredService] = useState(null);
 
@@ -45,32 +46,29 @@ const MarqueeText = () => {
     
     return (
       <div 
-        className="flex items-center space-x-8 relative"
+        className="flex items-center space-x-14 relative" 
         onMouseEnter={() => setHoveredService(`${setKey}-${index}`)}
         onMouseLeave={() => setHoveredService(null)}
       >
         <div className="relative">
           <motion.div
             initial={{ 
-              opacity: 0, 
-              scale: 0.8,
-              rotate: 15
+              opacity: 0,
+              scale: 1.2,
+              rotate: 0
             }}
             animate={{ 
               opacity: isHovered ? 0.8 : 0,
-              scale: isHovered ? 1 : 0.8,
-              rotate: isHovered ? 0 : 15
+              scale: isHovered ? 0.75 : 1.2,
+              rotate: isHovered ? 5 : 0
             }}
             exit={{
               opacity: 0,
-              scale: 0.8,
-              rotate: -15,
-              transition: {
-                duration: 0.3
-              }
+              scale: 1.2,
+              rotate: 0
             }}
             transition={{ 
-              duration: 0.5,
+              duration: 0.6,
               scale: {
                 type: "spring",
                 stiffness: 200,
@@ -78,8 +76,8 @@ const MarqueeText = () => {
               },
               rotate: {
                 type: "spring",
-                stiffness: 200,
-                damping: 20
+                stiffness: 150,
+                damping: 15
               }
             }}
             className="absolute -z-10"
@@ -88,11 +86,11 @@ const MarqueeText = () => {
               left: '50%',
               translateX: '-50%',
               translateY: '-50%',
-              width: '200px',
-              height: '200px'
+              width: '350px',
+              height: '350px'
             }}
           >
-            <div className="w-full h-full rounded-2xl overflow-hidden">
+            <div className="w-full h-full rounded-3xl overflow-hidden">
               <motion.div
                 className="w-full h-full bg-cover bg-center"
                 style={{
@@ -100,20 +98,16 @@ const MarqueeText = () => {
                   filter: 'brightness(0.8)',
                 }}
                 initial={{
-                  scale: 1
+                  scale: 1,
+                  rotate: 0
                 }}
                 animate={{
                   scale: isHovered ? 1.1 : 1,
-                  rotate: isHovered ? 0 : -5
-                }}
-                exit={{
-                  scale: 0.9,
-                  rotate: -10,
-                  opacity: 0
+                  rotate: isHovered ? 5 : 0
                 }}
                 transition={{
-                  duration: 0.5,
-                  ease: "easeOut"
+                  duration: 0.8,
+                  ease: [0.4, 0, 0.2, 1]
                 }}
               />
             </div>
@@ -131,12 +125,11 @@ const MarqueeText = () => {
                 backgroundClip: 'text',
                 display: 'inline-block',
                 padding: '0 10px'
-              }} 
-            
-              transition={{
-                duration: 0.4,
-                ease: "easeOut"
               }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }} 
             >
               {service.name}
             </motion.span>
@@ -165,7 +158,7 @@ const MarqueeText = () => {
   };
 
   return (
-    <div className="relative w-full h-[40vh] bg-black overflow-hidden">
+    <div className="relative w-full h-[60vh] bg-black overflow-hidden">
       <div className="absolute left-0 md:w-24 w-16 h-full z-10 bg-gradient-to-r from-black via-black to-transparent" />
       <div className="absolute right-0 md:w-24 w-16 h-full z-10 bg-gradient-to-l from-black via-black to-transparent" />
 
