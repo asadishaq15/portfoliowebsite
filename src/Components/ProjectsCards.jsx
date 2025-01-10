@@ -122,12 +122,12 @@ const VideoOverlay = ({ videoId, onClose }) => {
   
     return (
       <div
-        className="relative flex-shrink-0 overflow-hidden rounded-[2rem] group cursor-none"
+        className="relative flex-shrink-0 overflow-hidden rounded-[3rem] group cursor-none"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
         onClick={() => onVideoClick(project.videoId)}
-        style={{ width: '400px', height: '400px' }}
+        style={{ width: '420px', height: '420px' }}
       >
         <div className={`absolute inset-0transition-opacity duration-300 z-10 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
         
@@ -244,7 +244,7 @@ const VideoOverlay = ({ videoId, onClose }) => {
                   : 'flex gap-4 absolute'
                 }
               `}
-              style={!isMobile ? { paddingRight: '50vw' } : {}}
+              style={{ marginTop: '30px', ...(!isMobile ? { paddingRight: '50vw' } : {}) }} 
             >
               {projects.map((project) => (
                 <YouTubeCard 
