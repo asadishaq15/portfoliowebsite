@@ -30,7 +30,7 @@ const LogoMarquee = () => {
       
       return (
         <div 
-          className="flex items-center justify-center px-8 min-w-[200px] h-[80px] relative"
+          className="flex items-center justify-center px-8 min-w-[200px] h-[85px] relative"
           onMouseEnter={() => {
             setHoveredLogo(`${setKey}-${index}`);
             setIsHovered(true);
@@ -88,12 +88,12 @@ const LogoMarquee = () => {
   
     return (
       <div className="w-full bg-black py-16 px-4">
-        <h2 className="text-white text-start font-syne text-2xl md:text-2xl font-bold mb-12 max-w-[800px] mx-auto">
+        <h2 className="text-white text-center font-syne text-2xl md:text-2xl font-bold mb-12 max-w-[800px] mx-auto ml-40">
           Standing Tall with Our Esteemed Brand Partners
         </h2>
   
         <div className="relative w-full overflow-hidden">
-          <div className="relative max-w-[85%] mx-auto overflow-hidden rounded-full border border-gray-800">
+          <div className="relative max-w-[85%] mx-auto overflow-hidden rounded-full border border-gray-600">
             {/* Left Gradient Overlay */}
             <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10"></div>
             
