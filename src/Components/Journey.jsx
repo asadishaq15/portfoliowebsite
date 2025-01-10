@@ -88,7 +88,7 @@ const JourneySection = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden pt-44">
+    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-visible">
       <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet" />
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');

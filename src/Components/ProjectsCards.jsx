@@ -222,7 +222,7 @@ const VideoOverlay = ({ videoId, onClose }) => {
       <>
         <section 
           ref={containerRef}
-          className={`relative ${isMobile ? 'min-h-screen' : 'h-screen'} w-full overflow-hidden bg-black pt-24`}
+          className={`relative ${isMobile ? 'min-h-screen' : 'h-screen'} w-full overflow-hidden bg-black pt-24 mb-0`}
         >
           <div className="container mx-auto px-4 py-8">
             <div className={`${isMobile ? 'text-center mb-12' : 'flex justify-between items-center mb-8'}`}>
