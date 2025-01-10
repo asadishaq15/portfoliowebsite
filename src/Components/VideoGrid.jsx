@@ -99,10 +99,23 @@ const VideoGrid = () => {
                         <img src={landscape1} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
                         <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                        <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {[...Array(10)].map((_, index) => (
+            <div
+                key={index}
+                className="absolute h-full"
+                style={{
+                    left: `${(index + 1) * 10}%`,
+                    width: '1px',
+                    background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
+                    opacity: 0.4,
+                }}
+            />
+        ))}
+    </div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#D76B30] group-hover:via-[#FF8F5C] group-hover:to-[#2D9B8A] group-hover:bg-clip-text group-hover:text-transparent">Corporate Videos</h2>
-                            <p className="text-white/90 font-syne transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-inter transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                                 Professional corporate video production services tailored to enhance your business communications.
                             </p>
                         </div>
@@ -114,10 +127,23 @@ const VideoGrid = () => {
                         <img src={medium1} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
                         <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                        <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {[...Array(10)].map((_, index) => (
+            <div
+                key={index}
+                className="absolute h-full"
+                style={{
+                    left: `${(index + 1) * 10}%`,
+                    width: '1px',
+                    background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
+                    opacity: 0.4,
+                }}
+            />
+        ))}
+    </div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#D76B30] group-hover:via-[#FF8F5C] group-hover:to-[#2D9B8A] group-hover:bg-clip-text group-hover:text-transparent">Documentaries</h2>
-                            <p className="text-white/90 font-syne  transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-inter  transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                                 Compelling storytelling through documentary filmmaking.
                             </p>
                         </div>
@@ -129,10 +155,23 @@ const VideoGrid = () => {
                         <img src={portrait} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
                         <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                        <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {[...Array(10)].map((_, index) => (
+            <div
+                key={index}
+                className="absolute h-full"
+                style={{
+                    left: `${(index + 1) * 10}%`,
+                    width: '1px',
+                    background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
+                    opacity: 0.4,
+                }}
+            />
+        ))}
+    </div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#D76B30] group-hover:via-[#FF8F5C] group-hover:to-[#2D9B8A] group-hover:bg-clip-text group-hover:text-transparent">Shorts & Reels</h2>
-                            <p className="text-white/90 font-syne transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-inter transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                                 Engaging short-form content for social media platforms.
                             </p>
                         </div>
@@ -145,10 +184,23 @@ const VideoGrid = () => {
                         <img src={medium2} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
                         <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                        <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {[...Array(10)].map((_, index) => (
+            <div
+                key={index}
+                className="absolute h-full"
+                style={{
+                    left: `${(index + 1) * 10}%`,
+                    width: '1px',
+                    background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
+                    opacity: 0.4,
+                }}
+            />
+        ))}
+    </div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#D76B30] group-hover:via-[#FF8F5C] group-hover:to-[#2D9B8A] group-hover:bg-clip-text group-hover:text-transparent">Entertainment</h2>
-                            <p className="text-white/90 font-syne transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-inter transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                                 Creative storytelling through cinematic narratives.
                             </p>
                         </div>
@@ -160,10 +212,23 @@ const VideoGrid = () => {
                         <img src={landscape2} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
                         <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                        <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {[...Array(10)].map((_, index) => (
+            <div
+                key={index}
+                className="absolute h-full"
+                style={{
+                    left: `${(index + 1) * 10}%`,
+                    width: '1px',
+                    background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
+                    opacity: 0.4,
+                }}
+            />
+        ))}
+    </div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#D76B30] group-hover:via-[#FF8F5C] group-hover:to-[#2D9B8A] group-hover:bg-clip-text group-hover:text-transparent">Commercials</h2>
-                            <p className="text-white/90 font-syne transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-inter transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                                 Impactful advertising solutions for your brand.
                             </p>
                         </div>
@@ -176,10 +241,23 @@ const VideoGrid = () => {
                         <img src={landscape3} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
                         <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                        <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {[...Array(10)].map((_, index) => (
+            <div
+                key={index}
+                className="absolute h-full"
+                style={{
+                    left: `${(index + 1) * 10}%`,
+                    width: '1px',
+                    background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
+                    opacity: 0.4,
+                }}
+            />
+        ))}
+    </div>
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#D76B30] group-hover:via-[#FF8F5C] group-hover:to-[#2D9B8A] group-hover:bg-clip-text group-hover:text-transparent">Live Streaming</h2>
-                            <p className="text-white/90 font-syne transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-inter transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                                 Professional live event coverage and streaming services.
                             </p>
                         </div>
@@ -191,10 +269,23 @@ const VideoGrid = () => {
                         <img src={landscape4} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
                         <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                        <div className="absolute inset-x-0 top-[45%] h-[2px] bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                        <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                        <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        {[...Array(10)].map((_, index) => (
+                            <div
+                                key={index}
+                                className="absolute h-full"
+                                style={{
+                                    left: `${(index + 1) * 10}%`,
+                                    width: '1px',
+                                    background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
+                                    opacity: 0.4,
+                                }}
+                            />
+                        ))}
+                    </div>
+                                        <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <h2 className="text-2xl font-semibold text-white transform translate-y-0 group-hover:translate-y-8 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#D76B30] group-hover:via-[#FF8F5C] group-hover:to-[#2D9B8A] group-hover:bg-clip-text group-hover:text-transparent">Animation & VFX</h2>
-                            <p className="text-white/90 font-syne transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                            <p className="text-white/90 font-inter transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
                                 Stunning visual effects and animation services.
                             </p>
                         </div>
