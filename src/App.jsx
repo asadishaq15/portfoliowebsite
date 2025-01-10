@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar';
 import LandingPage from './Pages/LandingPage';
 import Footer from './Components/Footer';
 import Blogs from './Pages/Blogs';
+import BlogPost from './Components/BlogPost';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           {/* Define the route for the Home page */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </main>
       <Footer/>

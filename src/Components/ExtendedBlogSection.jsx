@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import GradientButton from './GradientButton';
 import blog1 from "../assets/blog/blog1.png";
 import blog2 from "../assets/blog/blog2.png";
@@ -16,57 +17,394 @@ const ExtendedBlogSection = () => {
         category: "NEWS",
         title: "StoryStream's Video Production Career Opportunities and Upcoming Event",
         author: "Michael Carter",
-        date: "Aug 29, 2023"
-      },
+        date: "Aug 29, 2023",
+        introduction: "StoryStream, your destination for visual storytelling, is excited to reveal two incredible opportunities that will spark your creative journey. Whether you're seeking a rewarding career in video production or eager to join us for an unforgettable event, we've got something special in store for you.",
+        primaryHeading: "Career Opportunities at StoryStream",
+        "bulletPoint": "Introduce StoryStream as a hub of creativity and innovation, setting the stage for the upcoming career opportunities and event.",
+        "contentSections": [
+          {
+            "title": "Career Opportunities",
+            "content": "Highlight the various career opportunities in video production that StoryStream is offering, including roles in videography, editing, scriptwriting, and more."
+          },
+          {
+            "title": "A Creative Journey",
+            "content": "Share stories from StoryStream's talented team members who have embarked on their own creative journey within the company."
+          },
+          {
+            "title": "Qualifications and Expectations",
+            "content": "Discuss the qualifications, skills, and values that StoryStream is seeking in potential team members."
+          },
+          {
+            "title": "Benefits and Company Culture",
+            "content": "Describe the benefits of working with StoryStream, including a supportive and innovative work culture."
+          },
+          {
+            "title": "Upcoming Event - 'StoryStream Showcase 2023'",
+            "content": "Announce StoryStream's upcoming event, 'StoryStream Showcase 2023,' and highlight its date, location, and significance in the video production industry."
+          },
+          {
+            "title": "Speaker Lineup and Workshops",
+            "content": "Tease the event's exciting speaker lineup, workshops, and hands-on sessions that will be available for attendees."
+          },
+          {
+            "title": "Interactive Experiences",
+            "content": "Share details about how 'StoryStream Showcase 2023' will offer interactive experiences, where attendees can dive into the art of storytelling."
+          },
+          {
+            "title": "Registration and Tickets",
+            "content": "Provide information on how to register for the event and any ticket options available to attendees."
+          },
+          {
+            "title": "Closing Invitation",
+            "content": "Conclude with an enthusiastic invitation to both career-seekers and creative enthusiasts, encouraging them to explore the opportunities at StoryStream and join the upcoming 'StoryStream Showcase 2023' event."
+          }
+        ],
+        conclusion: "StoryStream is not just a company; it's a dynamic community of creatives, innovators, and storytellers. Whether you're looking to embark on a rewarding video production career or eager to immerse yourself in the world of visual storytelling, we have something special for you. Join us for 'StoryStream Showcase 2023,' and let us be your guide to a world of endless creativity. The journey starts here, and we can't wait to have you on board. Unlock your creative future with StoryStream!"
+    },
       {
         image: blog2,
         category: "TIPS & TRICKS",
         title: "Mastering the Art of Storytelling: The Power of Narrative in Video Production",
         author: "Michael Carter",
-        date: "Oct 17, 2023"
-      },
+        date: "Oct 17, 2023",
+        introduction: "Storytelling is at the heart of every great video. This blog will delve into the significance of narrative in video production, exploring how it captivates audiences and leaves a lasting impact. Whether you're a filmmaker or a business looking to enhance your brand through video, this blog will inspire and educate.",
+        primaryHeading: "Career Opportunities at StoryStream",
+        "bulletPoint": "Introduce StoryStream as a hub of creativity and innovation, setting the stage for the upcoming career opportunities and event.",
+        "contentSections": [
+          {
+            "title": "Career Opportunities",
+            "content": "Highlight the various career opportunities in video production that StoryStream is offering, including roles in videography, editing, scriptwriting, and more."
+          },
+          {
+            "title": "A Creative Journey",
+            "content": "Share stories from StoryStream's talented team members who have embarked on their own creative journey within the company."
+          },
+          {
+            "title": "Qualifications and Expectations",
+            "content": "Discuss the qualifications, skills, and values that StoryStream is seeking in potential team members."
+          },
+          {
+            "title": "Benefits and Company Culture",
+            "content": "Describe the benefits of working with StoryStream, including a supportive and innovative work culture."
+          },
+          {
+            "title": "Upcoming Event - 'StoryStream Showcase 2023'",
+            "content": "Announce StoryStream's upcoming event, 'StoryStream Showcase 2023,' and highlight its date, location, and significance in the video production industry."
+          },
+          {
+            "title": "Speaker Lineup and Workshops",
+            "content": "Tease the event's exciting speaker lineup, workshops, and hands-on sessions that will be available for attendees."
+          },
+          {
+            "title": "Interactive Experiences",
+            "content": "Share details about how 'StoryStream Showcase 2023' will offer interactive experiences, where attendees can dive into the art of storytelling."
+          },
+          {
+            "title": "Registration and Tickets",
+            "content": "Provide information on how to register for the event and any ticket options available to attendees."
+          },
+          {
+            "title": "Closing Invitation",
+            "content": "Conclude with an enthusiastic invitation to both career-seekers and creative enthusiasts, encouraging them to explore the opportunities at StoryStream and join the upcoming 'StoryStream Showcase 2023' event."
+          }
+        ],
+        conclusion: "StoryStream is not just a company; it's a dynamic community of creatives, innovators, and storytellers. Whether you're looking to embark on a rewarding video production career or eager to immerse yourself in the world of visual storytelling, we have something special for you. Join us for 'StoryStream Showcase 2023,' and let us be your guide to a world of endless creativity. The journey starts here, and we can't wait to have you on board. Unlock your creative future with StoryStream!"
+    },
       {
         image: blog3,
         category: "STORIES",
         title: "Lights, Camera, Action! Behind the Scenes of a Video Production",
         author: "John Davis",
-        date: "Oct 16, 2023"
+        date: "Oct 16, 2023",
+        introduction: "Storytelling is at the heart of every great video. This blog will delve into the significance of narrative in video production, exploring how it captivates audiences and leaves a lasting impact. Whether you're a filmmaker or a business looking to enhance your brand through video, this blog will inspire and educate.",
+        primaryHeading: "Career Opportunities at StoryStream",
+        "bulletPoint": "Introduce StoryStream as a hub of creativity and innovation, setting the stage for the upcoming career opportunities and event.",
+        "contentSections": [
+          {
+            "title": "Career Opportunities",
+            "content": "Highlight the various career opportunities in video production that StoryStream is offering, including roles in videography, editing, scriptwriting, and more."
+          },
+          {
+            "title": "A Creative Journey",
+            "content": "Share stories from StoryStream's talented team members who have embarked on their own creative journey within the company."
+          },
+          {
+            "title": "Qualifications and Expectations",
+            "content": "Discuss the qualifications, skills, and values that StoryStream is seeking in potential team members."
+          },
+          {
+            "title": "Benefits and Company Culture",
+            "content": "Describe the benefits of working with StoryStream, including a supportive and innovative work culture."
+          },
+          {
+            "title": "Upcoming Event - 'StoryStream Showcase 2023'",
+            "content": "Announce StoryStream's upcoming event, 'StoryStream Showcase 2023,' and highlight its date, location, and significance in the video production industry."
+          },
+          {
+            "title": "Speaker Lineup and Workshops",
+            "content": "Tease the event's exciting speaker lineup, workshops, and hands-on sessions that will be available for attendees."
+          },
+          {
+            "title": "Interactive Experiences",
+            "content": "Share details about how 'StoryStream Showcase 2023' will offer interactive experiences, where attendees can dive into the art of storytelling."
+          },
+          {
+            "title": "Registration and Tickets",
+            "content": "Provide information on how to register for the event and any ticket options available to attendees."
+          },
+          {
+            "title": "Closing Invitation",
+            "content": "Conclude with an enthusiastic invitation to both career-seekers and creative enthusiasts, encouraging them to explore the opportunities at StoryStream and join the upcoming 'StoryStream Showcase 2023' event."
+          }
+        ],
+        conclusion: "StoryStream is not just a company; it's a dynamic community of creatives, innovators, and storytellers. Whether you're looking to embark on a rewarding video production career or eager to immerse yourself in the world of visual storytelling, we have something special for you. Join us for 'StoryStream Showcase 2023,' and let us be your guide to a world of endless creativity. The journey starts here, and we can't wait to have you on board. Unlock your creative future with StoryStream!"
       },
       {
         image: blog4,
-        category: "TUTORIALS",
-        title: "Essential Video Editing Techniques for Beginners",
+        category: "NEWS",
+        title: "Unveiling StoryStream's Commitment to Sustainability: A Greener Approach to Video Production",
         author: "Sarah Wilson",
-        date: "Nov 05, 2023"
+        date: "Nov 05, 2023",
+        introduction: "Storytelling is at the heart of every great video. This blog will delve into the significance of narrative in video production, exploring how it captivates audiences and leaves a lasting impact. Whether you're a filmmaker or a business looking to enhance your brand through video, this blog will inspire and educate.",
+        primaryHeading: "Career Opportunities at StoryStream",
+        "bulletPoint": "Introduce StoryStream as a hub of creativity and innovation, setting the stage for the upcoming career opportunities and event.",
+        "contentSections": [
+          {
+            "title": "Career Opportunities",
+            "content": "Highlight the various career opportunities in video production that StoryStream is offering, including roles in videography, editing, scriptwriting, and more."
+          },
+          {
+            "title": "A Creative Journey",
+            "content": "Share stories from StoryStream's talented team members who have embarked on their own creative journey within the company."
+          },
+          {
+            "title": "Qualifications and Expectations",
+            "content": "Discuss the qualifications, skills, and values that StoryStream is seeking in potential team members."
+          },
+          {
+            "title": "Benefits and Company Culture",
+            "content": "Describe the benefits of working with StoryStream, including a supportive and innovative work culture."
+          },
+          {
+            "title": "Upcoming Event - 'StoryStream Showcase 2023'",
+            "content": "Announce StoryStream's upcoming event, 'StoryStream Showcase 2023,' and highlight its date, location, and significance in the video production industry."
+          },
+          {
+            "title": "Speaker Lineup and Workshops",
+            "content": "Tease the event's exciting speaker lineup, workshops, and hands-on sessions that will be available for attendees."
+          },
+          {
+            "title": "Interactive Experiences",
+            "content": "Share details about how 'StoryStream Showcase 2023' will offer interactive experiences, where attendees can dive into the art of storytelling."
+          },
+          {
+            "title": "Registration and Tickets",
+            "content": "Provide information on how to register for the event and any ticket options available to attendees."
+          },
+          {
+            "title": "Closing Invitation",
+            "content": "Conclude with an enthusiastic invitation to both career-seekers and creative enthusiasts, encouraging them to explore the opportunities at StoryStream and join the upcoming 'StoryStream Showcase 2023' event."
+          }
+        ],
+        conclusion: "StoryStream is not just a company; it's a dynamic community of creatives, innovators, and storytellers. Whether you're looking to embark on a rewarding video production career or eager to immerse yourself in the world of visual storytelling, we have something special for you. Join us for 'StoryStream Showcase 2023,' and let us be your guide to a world of endless creativity. The journey starts here, and we can't wait to have you on board. Unlock your creative future with StoryStream!"
       },
       {
         image: blog5,
-        category: "EQUIPMENT",
-        title: "Top Camera Gear for Professional Video Production in 2024",
+        category: "NEWS",
+        title: "NEWS Story Stream Gears Up for a Spectacular 2023: A Sneak Peek into Our Exciting Plans",
         author: "David Thompson",
-        date: "Dec 12, 2023"
+        date: "Dec 12, 2023",
+        introduction: "Storytelling is at the heart of every great video. This blog will delve into the significance of narrative in video production, exploring how it captivates audiences and leaves a lasting impact. Whether you're a filmmaker or a business looking to enhance your brand through video, this blog will inspire and educate.",
+        primaryHeading: "Career Opportunities at StoryStream",
+        "bulletPoint": "Introduce StoryStream as a hub of creativity and innovation, setting the stage for the upcoming career opportunities and event.",
+        "contentSections": [
+          {
+            "title": "Career Opportunities",
+            "content": "Highlight the various career opportunities in video production that StoryStream is offering, including roles in videography, editing, scriptwriting, and more."
+          },
+          {
+            "title": "A Creative Journey",
+            "content": "Share stories from StoryStream's talented team members who have embarked on their own creative journey within the company."
+          },
+          {
+            "title": "Qualifications and Expectations",
+            "content": "Discuss the qualifications, skills, and values that StoryStream is seeking in potential team members."
+          },
+          {
+            "title": "Benefits and Company Culture",
+            "content": "Describe the benefits of working with StoryStream, including a supportive and innovative work culture."
+          },
+          {
+            "title": "Upcoming Event - 'StoryStream Showcase 2023'",
+            "content": "Announce StoryStream's upcoming event, 'StoryStream Showcase 2023,' and highlight its date, location, and significance in the video production industry."
+          },
+          {
+            "title": "Speaker Lineup and Workshops",
+            "content": "Tease the event's exciting speaker lineup, workshops, and hands-on sessions that will be available for attendees."
+          },
+          {
+            "title": "Interactive Experiences",
+            "content": "Share details about how 'StoryStream Showcase 2023' will offer interactive experiences, where attendees can dive into the art of storytelling."
+          },
+          {
+            "title": "Registration and Tickets",
+            "content": "Provide information on how to register for the event and any ticket options available to attendees."
+          },
+          {
+            "title": "Closing Invitation",
+            "content": "Conclude with an enthusiastic invitation to both career-seekers and creative enthusiasts, encouraging them to explore the opportunities at StoryStream and join the upcoming 'StoryStream Showcase 2023' event."
+          }
+        ],
+        conclusion: "StoryStream is not just a company; it's a dynamic community of creatives, innovators, and storytellers. Whether you're looking to embark on a rewarding video production career or eager to immerse yourself in the world of visual storytelling, we have something special for you. Join us for 'StoryStream Showcase 2023,' and let us be your guide to a world of endless creativity. The journey starts here, and we can't wait to have you on board. Unlock your creative future with StoryStream!"
       },
       {
         image: blog6,
-        category: "INDUSTRY",
-        title: "The Future of Video Production: Trends to Watch",
+        category: "TIPS & TRICKS",
+        title: "Video Marketing Magic: 10 Tips to Boost Your Brand's Succes",
         author: "Emma Roberts",
-        date: "Jan 03, 2024"
+        date: "Jan 03, 2024",
+        introduction: "Storytelling is at the heart of every great video. This blog will delve into the significance of narrative in video production, exploring how it captivates audiences and leaves a lasting impact. Whether you're a filmmaker or a business looking to enhance your brand through video, this blog will inspire and educate.",
+        primaryHeading: "Career Opportunities at StoryStream",
+        "bulletPoint": "Introduce StoryStream as a hub of creativity and innovation, setting the stage for the upcoming career opportunities and event.",
+        "contentSections": [
+          {
+            "title": "Career Opportunities",
+            "content": "Highlight the various career opportunities in video production that StoryStream is offering, including roles in videography, editing, scriptwriting, and more."
+          },
+          {
+            "title": "A Creative Journey",
+            "content": "Share stories from StoryStream's talented team members who have embarked on their own creative journey within the company."
+          },
+          {
+            "title": "Qualifications and Expectations",
+            "content": "Discuss the qualifications, skills, and values that StoryStream is seeking in potential team members."
+          },
+          {
+            "title": "Benefits and Company Culture",
+            "content": "Describe the benefits of working with StoryStream, including a supportive and innovative work culture."
+          },
+          {
+            "title": "Upcoming Event - 'StoryStream Showcase 2023'",
+            "content": "Announce StoryStream's upcoming event, 'StoryStream Showcase 2023,' and highlight its date, location, and significance in the video production industry."
+          },
+          {
+            "title": "Speaker Lineup and Workshops",
+            "content": "Tease the event's exciting speaker lineup, workshops, and hands-on sessions that will be available for attendees."
+          },
+          {
+            "title": "Interactive Experiences",
+            "content": "Share details about how 'StoryStream Showcase 2023' will offer interactive experiences, where attendees can dive into the art of storytelling."
+          },
+          {
+            "title": "Registration and Tickets",
+            "content": "Provide information on how to register for the event and any ticket options available to attendees."
+          },
+          {
+            "title": "Closing Invitation",
+            "content": "Conclude with an enthusiastic invitation to both career-seekers and creative enthusiasts, encouraging them to explore the opportunities at StoryStream and join the upcoming 'StoryStream Showcase 2023' event."
+          }
+        ],
+        conclusion: "StoryStream is not just a company; it's a dynamic community of creatives, innovators, and storytellers. Whether you're looking to embark on a rewarding video production career or eager to immerse yourself in the world of visual storytelling, we have something special for you. Join us for 'StoryStream Showcase 2023,' and let us be your guide to a world of endless creativity. The journey starts here, and we can't wait to have you on board. Unlock your creative future with StoryStream!"
       },
       {
         image: blog7,
-        category: "INTERVIEWS",
-        title: "A Day in the Life of a Video Production Director",
+        category: "STORIES",
+        title: "From Script to Screen: The Journey of Crafting Compelling Video Stories",
         author: "James Anderson",
-        date: "Jan 15, 2024"
+        date: "Jan 15, 2024",
+        introduction: "Storytelling is at the heart of every great video. This blog will delve into the significance of narrative in video production, exploring how it captivates audiences and leaves a lasting impact. Whether you're a filmmaker or a business looking to enhance your brand through video, this blog will inspire and educate.",
+        primaryHeading: "Career Opportunities at StoryStream",
+        "bulletPoint": "Introduce StoryStream as a hub of creativity and innovation, setting the stage for the upcoming career opportunities and event.",
+        "contentSections": [
+          {
+            "title": "Career Opportunities",
+            "content": "Highlight the various career opportunities in video production that StoryStream is offering, including roles in videography, editing, scriptwriting, and more."
+          },
+          {
+            "title": "A Creative Journey",
+            "content": "Share stories from StoryStream's talented team members who have embarked on their own creative journey within the company."
+          },
+          {
+            "title": "Qualifications and Expectations",
+            "content": "Discuss the qualifications, skills, and values that StoryStream is seeking in potential team members."
+          },
+          {
+            "title": "Benefits and Company Culture",
+            "content": "Describe the benefits of working with StoryStream, including a supportive and innovative work culture."
+          },
+          {
+            "title": "Upcoming Event - 'StoryStream Showcase 2023'",
+            "content": "Announce StoryStream's upcoming event, 'StoryStream Showcase 2023,' and highlight its date, location, and significance in the video production industry."
+          },
+          {
+            "title": "Speaker Lineup and Workshops",
+            "content": "Tease the event's exciting speaker lineup, workshops, and hands-on sessions that will be available for attendees."
+          },
+          {
+            "title": "Interactive Experiences",
+            "content": "Share details about how 'StoryStream Showcase 2023' will offer interactive experiences, where attendees can dive into the art of storytelling."
+          },
+          {
+            "title": "Registration and Tickets",
+            "content": "Provide information on how to register for the event and any ticket options available to attendees."
+          },
+          {
+            "title": "Closing Invitation",
+            "content": "Conclude with an enthusiastic invitation to both career-seekers and creative enthusiasts, encouraging them to explore the opportunities at StoryStream and join the upcoming 'StoryStream Showcase 2023' event."
+          }
+        ],
+        conclusion: "StoryStream is not just a company; it's a dynamic community of creatives, innovators, and storytellers. Whether you're looking to embark on a rewarding video production career or eager to immerse yourself in the world of visual storytelling, we have something special for you. Join us for 'StoryStream Showcase 2023,' and let us be your guide to a world of endless creativity. The journey starts here, and we can't wait to have you on board. Unlock your creative future with StoryStream!"
       },
       {
         image: blog8,
         category: "TECHNOLOGY",
-        title: "AI in Video Production: Revolutionary Tools and Techniques",
+        title: "The Visual Revolution: Unveiling the Profound Importance of Video Content",
         author: "Lisa Chen",
-        date: "Jan 20, 2024"
+        date: "Jan 20, 2024",
+        introduction: "Storytelling is at the heart of every great video. This blog will delve into the significance of narrative in video production, exploring how it captivates audiences and leaves a lasting impact. Whether you're a filmmaker or a business looking to enhance your brand through video, this blog will inspire and educate.",
+        primaryHeading: "Career Opportunities at StoryStream",
+        "bulletPoint": "Introduce StoryStream as a hub of creativity and innovation, setting the stage for the upcoming career opportunities and event.",
+        "contentSections": [
+          {
+            "title": "Career Opportunities",
+            "content": "Highlight the various career opportunities in video production that StoryStream is offering, including roles in videography, editing, scriptwriting, and more."
+          },
+          {
+            "title": "A Creative Journey",
+            "content": "Share stories from StoryStream's talented team members who have embarked on their own creative journey within the company."
+          },
+          {
+            "title": "Qualifications and Expectations",
+            "content": "Discuss the qualifications, skills, and values that StoryStream is seeking in potential team members."
+          },
+          {
+            "title": "Benefits and Company Culture",
+            "content": "Describe the benefits of working with StoryStream, including a supportive and innovative work culture."
+          },
+          {
+            "title": "Upcoming Event - 'StoryStream Showcase 2023'",
+            "content": "Announce StoryStream's upcoming event, 'StoryStream Showcase 2023,' and highlight its date, location, and significance in the video production industry."
+          },
+          {
+            "title": "Speaker Lineup and Workshops",
+            "content": "Tease the event's exciting speaker lineup, workshops, and hands-on sessions that will be available for attendees."
+          },
+          {
+            "title": "Interactive Experiences",
+            "content": "Share details about how 'StoryStream Showcase 2023' will offer interactive experiences, where attendees can dive into the art of storytelling."
+          },
+          {
+            "title": "Registration and Tickets",
+            "content": "Provide information on how to register for the event and any ticket options available to attendees."
+          },
+          {
+            "title": "Closing Invitation",
+            "content": "Conclude with an enthusiastic invitation to both career-seekers and creative enthusiasts, encouraging them to explore the opportunities at StoryStream and join the upcoming 'StoryStream Showcase 2023' event."
+          }
+        ],
+        conclusion: "StoryStream is not just a company; it's a dynamic community of creatives, innovators, and storytellers. Whether you're looking to embark on a rewarding video production career or eager to immerse yourself in the world of visual storytelling, we have something special for you. Join us for 'StoryStream Showcase 2023,' and let us be your guide to a world of endless creativity. The journey starts here, and we can't wait to have you on board. Unlock your creative future with StoryStream!"
       }
+    
     ];
   
     return (
@@ -78,6 +416,15 @@ const ExtendedBlogSection = () => {
   
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {blogs.map((blog, index) => (
+               <Link 
+               to={`/blog/${index}`} 
+               key={index}
+               state={{ blog: blog,
+                primaryHeading: blog.primaryHeading,
+                conclusion: blog.conclusion,
+                bulletPoint:blog.bulletPoint
+              }}
+             >
               <div 
                 key={index} 
                 className="bg-[#111111] rounded-3xl overflow-hidden group transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl"
@@ -111,6 +458,7 @@ const ExtendedBlogSection = () => {
                   </div>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
   

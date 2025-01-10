@@ -10,6 +10,9 @@ module.exports = {
         playfair: ['"Playfair Display"', 'serif'],
         syne: ['"Syne"', 'sans-serif'],
       },
+      cursor: {
+        none: 'none',
+      },
     },
   },
   plugins: [],

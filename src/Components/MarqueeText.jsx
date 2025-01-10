@@ -166,8 +166,8 @@ const MarqueeText = () => {
 
   return (
     <div className="relative w-full h-[40vh] bg-black overflow-hidden">
-      <div className="absolute left-0 w-24 h-full z-10 bg-gradient-to-r from-black via-black to-transparent" />
-      <div className="absolute right-0 w-24 h-full z-10 bg-gradient-to-l from-black via-black to-transparent" />
+      <div className="absolute left-0 md:w-24 w-16 h-full z-10 bg-gradient-to-r from-black via-black to-transparent" />
+      <div className="absolute right-0 md:w-24 w-16 h-full z-10 bg-gradient-to-l from-black via-black to-transparent" />
 
       <motion.div
         className="flex items-center whitespace-nowrap h-full"

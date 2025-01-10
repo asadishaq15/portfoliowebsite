@@ -88,90 +88,91 @@ const VideoOverlay = ({ videoId, onClose }) => {
   };
   
   const YouTubeCard = ({ project, onVideoClick }) => {
-      const [isHovered, setIsHovered] = useState(false);
-      const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-      const iframeRef = useRef(null);
-      const cursorRef = useRef(null);
-    
-      const handleMouseMove = (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        setMousePosition({ x, y });
-      };
-    
-      const handleMouseEnter = () => {
-        setIsHovered(true);
-        if (iframeRef.current) {
-          iframeRef.current.contentWindow.postMessage(
-            '{"event":"command","func":"playVideo","args":""}',
-            '*'
-          );
-        }
-      };
-    
-      const handleMouseLeave = () => {
-        setIsHovered(false);
-        if (iframeRef.current) {
-          iframeRef.current.contentWindow.postMessage(
-            '{"event":"command","func":"pauseVideo","args":""}',
-            '*'
-          );
-        }
-      };
-    
-      return (
+    const [isHovered, setIsHovered] = useState(false);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const iframeRef = useRef(null);
+    const cursorRef = useRef(null);
+  
+    const handleMouseMove = (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      setMousePosition({ x, y });
+    };
+  
+    const handleMouseEnter = () => {
+      setIsHovered(true);
+      if (iframeRef.current) {
+        iframeRef.current.contentWindow.postMessage(
+          '{"event":"command","func":"playVideo","args":""}',
+          '*'
+        );
+      }
+    };
+  
+    const handleMouseLeave = () => {
+      setIsHovered(false);
+      if (iframeRef.current) {
+        iframeRef.current.contentWindow.postMessage(
+          '{"event":"command","func":"pauseVideo","args":""}',
+          '*'
+        );
+      }
+    };
+  
+    return (
+      <div
+        className="relative flex-shrink-0 overflow-hidden rounded-[2rem] group cursor-none"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
+        onClick={() => onVideoClick(project.videoId)}
+        style={{ width: '400px', height: '400px' }}
+      >
+        <div className={`absolute inset-0transition-opacity duration-300 z-10 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+        
+        {isHovered && (
         <div
-          className="relative flex-shrink-0 overflow-hidden rounded-[2rem] group cursor-pointer"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onMouseMove={handleMouseMove}
-          onClick={() => onVideoClick(project.videoId)}
-          style={{ width: '400px', height: '400px' }}
+          ref={cursorRef}
+          className="pointer-events-none absolute z-30 flex items-center justify-center"
+          style={{
+            transform: `translate(${mousePosition.x - 60}px, ${mousePosition.y - 60}px)`,
+            width: '120px',
+            height: '120px',
+            transition: 'transform 0.1s ease-out',
+          }}
         >
-          <div className={`absolute inset-0 bg-black/30 backdrop-blur-[2px] transition-opacity duration-300 z-10 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
-          
-          {isHovered && (
-            <div
-              ref={cursorRef}
-              className="pointer-events-none custom-cursor absolute z-30 flex items-center justify-center"
-              style={{
-                transform: `translate(${mousePosition.x - 50}px, ${mousePosition.y - 50}px)`,
-                width: '100px',
-                height: '100px',
-                transition: 'transform 0.1s ease-out',
-              }}
-            >
-              <div className="absolute inset-0 rounded-full border-2 border-gray-500 bg-white/20" />
-              <span className="relative font-syne text-white text-sm font-light tracking-wider text-center whitespace-nowrap">
-                WATCH<br />FULL VIDEO
-              </span>
-            </div>
-          )}
-          
-          {isHovered ? (
-            <iframe
-              ref={iframeRef}
-              className="w-full h-full absolute top-0 left-0 z-0"
-              src={`https://www.youtube.com/embed/${project.videoId}?enablejsapi=1&autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${project.videoId}`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              frameBorder="0"
-            />
-          ) : (
-            <img
-              src={`https://img.youtube.com/vi/${project.videoId}/maxresdefault.jpg`}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          )}
-          
-          <div className="absolute bottom-8 left-8 text-white z-20">
-            <h3 className="text-2xl font-bold font-syne mb-2">{project.title}</h3>
-            <p className="text-sm opacity-80">{project.subtitle}</p>
-          </div>
+      <div className="absolute inset-0 rounded-full border border-gray-400 bg-white/30 backdrop-blur-sm" />
+          <span className="relative font-syne text-white text-sm font-light tracking-wider text-center whitespace-nowrap p-6">
+            WATCH<br />FULL VIDEO
+          </span>
         </div>
-      );
+      )}
+        
+        {/* Update the iframe and img to include pointer-events-none */}
+        {isHovered ? (
+          <iframe
+            ref={iframeRef}
+            className="w-full h-full absolute top-0 left-0 z-0 pointer-events-none"
+            src={`https://www.youtube.com/embed/${project.videoId}?enablejsapi=1&autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${project.videoId}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            frameBorder="0"
+          />
+        ) : (
+          <img
+            src={`https://img.youtube.com/vi/${project.videoId}/maxresdefault.jpg`}
+            alt={project.title}
+            className="w-full h-full object-cover pointer-events-none"
+          />
+        )}
+        
+        <div className="absolute bottom-8 left-8 text-white z-20 pointer-events-none">
+          <h3 className="text-2xl font-bold font-syne mb-2">{project.title}</h3>
+          <p className="text-sm opacity-80">{project.subtitle}</p>
+        </div>
+      </div>
+    );
   };
   
   const ProjectsCards = () => {
