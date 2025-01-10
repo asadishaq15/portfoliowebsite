@@ -72,7 +72,7 @@ const VideoGrid = () => {
                         >
                             <img 
                                 src={card.image} 
-                                alt="" 
+                                alt="card image" 
                                 className={`w-full h-full object-cover rounded-lg transition-opacity duration-500 ${
                                     expandedCard === card.id ? 'opacity-30' : 'opacity-55'
                                 }`}
