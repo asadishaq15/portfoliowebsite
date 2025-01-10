@@ -9,6 +9,8 @@ module.exports = {
       fontFamily: {
         playfair: ['"Playfair Display"', 'serif'],
         syne: ['"Syne"', 'sans-serif'],
+        inter: ['"Inter"', 'sans-serif'],
+
       },
       cursor: {
         none: 'none',
