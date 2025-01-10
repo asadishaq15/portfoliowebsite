@@ -61,23 +61,40 @@ const VideoGrid = () => {
                 We're Video Pros in Many Industries!
             </h1>
 
-            {/* Mobile View */}
-            <div className="block md:hidden">
+          {/* Mobile View */}
+          <div className="block md:hidden">
                 {serviceCards.map((card) => (
                     <div key={card.id} className="mb-6">
-                        <div className="relative h-40 bg-gray-800 rounded-3xl overflow-hidden">
+                        <div 
+                            className={`relative h-40 bg-gray-800 rounded-3xl overflow-hidden transition-all duration-500 ${
+                                expandedCard === card.id ? 'h-52' : 'h-40'
+                            }`}
+                        >
                             <img 
                                 src={card.image} 
                                 alt="" 
-                                className="w-full h-full object-cover rounded-lg opacity-55"
+                                className={`w-full h-full object-cover rounded-lg transition-opacity duration-500 ${
+                                    expandedCard === card.id ? 'opacity-30' : 'opacity-55'
+                                }`}
                             />
-                            <div className="absolute inset-0 bg-black opacity-60"></div>
+                            <div className={`absolute inset-0 bg-black transition-opacity duration-500 ${
+                                expandedCard === card.id ? 'opacity-80' : 'opacity-60'
+                            }`}></div>
+                            
                             <div className="absolute inset-0 p-4 flex flex-col justify-between">
-                            <h2 className="text-xl font-syne font-bold bg-gradient-to-r from-[#D76B30] via-[#FF8F5C] to-[#2D9B8A] bg-clip-text text-transparent transition-colors duration-300">{card.title}</h2>
+                                <h2 className={`text-xl font-syne font-bold transition-all duration-500 ${
+                                    expandedCard === card.id 
+                                    ? 'bg-gradient-to-r from-[#D76B30] via-[#FF8F5C] to-[#2D9B8A] bg-clip-text text-transparent' 
+                                    : 'text-white'
+                                }`}>
+                                    {card.title}
+                                </h2>
                                 <div>
-                                    {expandedCard === card.id ? (
+                                    <div className={`overflow-hidden transition-all duration-500 ${
+                                        expandedCard === card.id ? 'max-h-20' : 'max-h-0'
+                                    }`}>
                                         <p className="text-white/90 font-syne text-sm mb-2">{card.description}</p>
-                                    ) : null}
+                                    </div>
                                     <button
                                         onClick={() => setExpandedCard(expandedCard === card.id ? null : card.id)}
                                         className="text-white border border-white px-4 py-1 rounded-full text-sm hover:bg-white hover:text-black transition-colors"
@@ -90,6 +107,7 @@ const VideoGrid = () => {
                     </div>
                 ))}
             </div>
+
 
             {/* Desktop View */}
             <div className="hidden md:grid grid-cols-12 gap-4 auto-rows-min">
