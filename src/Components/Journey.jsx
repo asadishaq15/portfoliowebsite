@@ -98,17 +98,7 @@ const JourneySection = () => {
         body {
             font-family: 'Syne', sans-serif;
           }
-        
-          @keyframes gradientMoveIn {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-          }
-        
-          @keyframes gradientMoveOut {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-          }
-        
+    
           .card-container {
             position: relative;
             overflow: visible;
@@ -248,7 +238,7 @@ const JourneySection = () => {
               onClick={() => setExpandedCard(expandedCard === card.title ? null : card.title)}
               style={{
                 background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
-                border: '1px solid rgba(255,255,255,0.1)',
+                border: '1px solid rgba(255,255,255,0.3)',
                 backdropFilter: 'blur(10px)',
               }}
             >
