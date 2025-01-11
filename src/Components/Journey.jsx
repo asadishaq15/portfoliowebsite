@@ -11,7 +11,7 @@ const JourneySection = () => {
   const titleRef = useRef(null);
   const containerRef = useRef(null);
   const [expandedCard, setExpandedCard] = useState(null);
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     if (window.innerWidth > 768) {
       const tl = gsap.timeline({
@@ -19,7 +19,7 @@ const JourneySection = () => {
           trigger: containerRef.current,
           start: 'top top',
           end: 'bottom center',
-          scrub: true,
+          scrub: 1,
           markers: false,
           pin: false,
           smoothChildTiming: true,
@@ -27,7 +27,7 @@ const JourneySection = () => {
       });
 
       tl.to(titleRef.current, {
-        y: window.innerHeight * 0.5,
+        y: window.innerHeight * 0.8,
         ease: 'linear',
       });
 
@@ -36,7 +36,14 @@ const JourneySection = () => {
       };
     }
   }, []);
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
+
+  
   const cardDetails = {
     'Post-Production': [
       'COLOR GRADING',
@@ -88,9 +95,23 @@ const JourneySection = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-visible">
+    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-visible relative pt-24">
        
-
+{/* Background Lines */}
+<div className={`absolute inset-0 w-full h-full ${windowWidth < 1024 ? 'hidden' : ''}`}>
+      {[...Array(10)].map((_, index) => (
+        <div
+          key={index}
+          className="absolute h-full"
+          style={{
+            left: `${(index + 1) * 10}%`,
+            width: '1px',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
+            opacity: 0.4,
+          }}
+        />
+      ))}
+    </div>
       <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet" />
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap');
@@ -208,83 +229,140 @@ const JourneySection = () => {
           font-size: 0.870rem;
         }
 
-        .learn-more-btn:hover {
-          border-color: #ff6b00;
-        }
+    
+
+         .hide-details-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    font-size: 0.870rem;
+    margin-top: 2rem;
+  }
+
+
+
+
+  .hide-details-btn:hover .arrow-container {
+    transform: rotate(-90deg);
+    background-color: rgba(0, 255, 0, 0.1); /* Green background */
+    border-color: #006A4E; /* Green border */
+  }
+  .card-container:hover .hide-details-btn .arrow-container {
+    transform: rotate(-90deg);
+    background-color: rgba(0, 255, 0, 0.1); /* Green background */
+    border-color: #006A4E; /* Green border */
+  }
+  .card-container:hover .hide-details-btn .arrow-icon {
+    color: #006A4E; /* Green arrow */
+  }
+
+  .card-container:hover .hide-details-btn .arrow-container {
+    transform: rotate(-90deg);
+  
+   
+  }
+
       `}</style>
 
-      <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row">
-      <div className="w-full md:w-1/3 md:pr-8 relative mb-8 md:mb-0">
+      <div className="max-w-8xl mx-auto px-4 py-8 mb-12 flex flex-col md:flex-row">
+      <div className="w-full md:w-2/5 md:pr-2 relative mb-8 md:mb-0">
   <div 
     ref={titleRef} 
-    className="md:sticky md:top-0"
-    style={{ paddingTop: '5rem' }}
+    className="md:sticky md:top-24 flex flex-col justify-between h-full"
+
   >
-    <h1 className="text-2xl md:text-2xl font-syne font-bold leading-tight w-full md:w-auto">
+    <h1 className="text-xl text-center md:text-start md:text-3xl px-6 font-syne font-semibold leading-tight w-full md:w-full">
       From Concept To Completion:<br />
       We've Got You Covered!
     </h1>
   </div>
-  <div className="hidden md:block absolute bottom-0 left-0">
-    <GradientButton>Learn More</GradientButton>
+  <div className="hidden md:block absolute bottom-0 px-6">
+    <GradientButton>Explore Services</GradientButton>
   </div>
 </div>
 
-        <div className="w-full md:w-2/3 space-y-8">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="card-container p-8 rounded-3xl relative cursor-pointer"
-              onClick={() => setExpandedCard(expandedCard === card.title ? null : card.title)}
-              style={{
-                background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
-                border: '1px solid rgba(255,255,255,0.3)',
-                backdropFilter: 'blur(10px)',
-              }}
+        <div className="w-full md:w-2/3 space-y-8 md:px-8 p-1">
+        {cards.map((card, index) => (
+  <div
+    key={index}
+    className="card-container p-8 rounded-3xl relative cursor-pointer"
+    onClick={() => setExpandedCard(expandedCard === card.title ? null : card.title)}
+    style={{
+      background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+      border: '1px solid rgba(255,255,255,0.3)',
+      backdropFilter: 'blur(10px)',
+    }}
+  >
+    <img 
+      src={card.image}
+      alt={card.title}
+      className="floating-image"
+    />
+    <div className="gradient-overlay" />
+    <div className="relative z-10">
+      <h2 className="text-3xl font-semibold mb-4">{card.title}</h2>
+      <p className="text-gray-300 text-base font-light mb-6 font-inter leading-relaxed">
+        {card.description}
+      </p>
+      
+      {expandedCard !== card.title && (
+        <div className="learn-more-btn">
+          <span className="mr-4">LEARN MORE</span>
+          <div className="arrow-container">
+            <svg
+              className="w-4 h-4 arrow-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              <img 
-                src={card.image}
-                alt={card.title}
-                className="floating-image"
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
               />
-              <div className="gradient-overlay" />
-              <div className="relative z-10">
-                <h2 className="text-3xl font-semibold mb-4">{card.title}</h2>
-                <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                  {card.description}
-                </p>
-                <div className="learn-more-btn">
-                  <span className="mr-4">LEARN MORE</span>
-                  <div className="arrow-container">
-                    <svg
-                      className="w-4 h-4 arrow-icon"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
-                </div>
+            </svg>
+          </div>
+        </div>
+      )}
 
-                <div className={`details-dropdown ${expandedCard === card.title ? 'expanded' : ''}`}>
-                  <div className="grid grid-cols-2 gap-4">
-                    {cardDetails[card.title]?.map((detail, idx) => (
-                      <div key={idx} className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 bg-white/50 rounded-full"></span>
-                        <span className="text-white/80">{detail}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+      <div className={`details-dropdown ${expandedCard === card.title ? 'expanded' : ''}`}>
+        <div className="grid grid-cols-2 gap-4">
+          {cardDetails[card.title]?.map((detail, idx) => (
+            <div key={idx} className="flex items-center space-x-2">
+              <span className="w-1.5 h-1.5 bg-white/50 rounded-full"></span>
+              <span className="text-white/80 text-xs font-inter">{detail}</span>
             </div>
           ))}
+        </div>
+        
+        {expandedCard === card.title && (
+          <div className="hide-details-btn">
+            <span className="mr-4">HIDE DETAILS</span>
+            <div className="arrow-container">
+              <svg
+                className="w-4 h-4 arrow-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+))}
         </div>
         
         <div className="md:hidden mt-8 text-center">
