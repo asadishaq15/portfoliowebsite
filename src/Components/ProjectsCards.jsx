@@ -142,7 +142,7 @@ const VideoOverlay = ({ videoId, onClose }) => {
             transition: 'transform 0.1s ease-out',
           }}
         >
-      <div className="absolute inset-0 rounded-full border border-gray-400 bg-white/30 backdrop-blur-sm" />
+      <div className="absolute inset-0 rounded-full border border-gray-400 bg-white/30 backdrop-blur-sm overflow-visible" />
           <span className="relative font-syne text-white text-sm font-light tracking-wider text-center whitespace-nowrap p-6">
             WATCH<br />FULL VIDEO
           </span>

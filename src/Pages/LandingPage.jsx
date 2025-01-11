@@ -10,12 +10,14 @@ import BlogSection from '../Components/BlogCards';
 import MarqueeText from '../Components/MarqueeText';
 import LogoMarquee from '../Components/LogoMarquee';
 import JourneySection from '../Components/Journey';
+import ScrollVideo from '../Components/ShowReel';
 
 
 const LandingPage = () => {
   return (
     <div>
       <Hero />
+      <ScrollVideo/>
       <LogoMarquee/>
       <FeaturedPortfolio />
       <JourneySection/>
