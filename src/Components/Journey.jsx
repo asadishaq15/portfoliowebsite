@@ -88,21 +88,8 @@ const JourneySection = () => {
   ];
 
   return (
-  <div ref={containerRef} className="min-h-screen bg-black text-white overflow-visible ">
-         <div className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
-        {[...Array(10)].map((_, index) => (
-          <div
-            key={index}
-            className="absolute h-full"
-            style={{
-              left: `${(index + 1) * 10}%`,
-              width: '1px',
-              background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%)',
-              opacity: 0.4,
-            }}
-          />
-        ))}
-      </div>
+    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-visible">
+       
 
       <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet" />
       <style jsx>{`
