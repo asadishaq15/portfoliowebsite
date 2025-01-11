@@ -88,7 +88,7 @@ const JourneySection = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-visible relative">
+  <div ref={containerRef} className="min-h-screen bg-black text-white overflow-visible ">
          <div className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
         {[...Array(10)].map((_, index) => (
           <div
@@ -238,20 +238,20 @@ const JourneySection = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row">
       <div className="w-full md:w-1/3 md:pr-8 relative mb-8 md:mb-0">
-        <div 
-            ref={titleRef} 
-            className="md:sticky md:top-0"
-            style={{ paddingTop: '5rem' }}
-        >
-            <h1 className="text-2xl md:text-2xl font-syne font-bold leading-tight w-full md:w-auto">
-            From Concept To Completion:<br />
-            We've Got You Covered!
-            </h1>
-        </div>
-        <div className="hidden md:block absolute bottom-0 left-0">
-            <GradientButton>Learn More</GradientButton>
-        </div>
-        </div>
+  <div 
+    ref={titleRef} 
+    className="md:sticky md:top-0"
+    style={{ paddingTop: '5rem' }}
+  >
+    <h1 className="text-2xl md:text-2xl font-syne font-bold leading-tight w-full md:w-auto">
+      From Concept To Completion:<br />
+      We've Got You Covered!
+    </h1>
+  </div>
+  <div className="hidden md:block absolute bottom-0 left-0">
+    <GradientButton>Learn More</GradientButton>
+  </div>
+</div>
 
         <div className="w-full md:w-2/3 space-y-8">
           {cards.map((card, index) => (

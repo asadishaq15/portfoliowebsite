@@ -70,7 +70,7 @@ const ScrollVideo = () => {
             md:px-8
             ${isMobile ? 'aspect-[9/14] max-w-base' : 'aspect-video max-w-5xl'}
           `}>
-            <div className="absolute inset-0 rounded-[55px] md:rounded-3xl overflow-hidden bg-gray-900">
+            <div className="absolute inset-0 rounded-[55px] md:rounded-[55px] overflow-hidden bg-gray-900">
               <video 
                 className="w-full h-full object-cover"
                 src="https://cdn.pixabay.com/video/2021/09/11/88207-602915574_large.mp4"
