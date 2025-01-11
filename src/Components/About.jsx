@@ -35,9 +35,9 @@ const AboutAgency = () => {
     }, []);
 
     return (
-        <div ref={containerRef} className="min-h-screen bg-black text-white px-4 py-28 overflow-hidden relative">
+        <div ref={containerRef} className="min-h-screen bg-black text-white px-4 py-12 lg:py-28 overflow-hidden relative">
             {/* Background Lines */}
-            <div className="absolute inset-0 w-full h-full">
+            <div className={`absolute inset-0 w-full h-full ${window.innerWidth < 1024 ? 'hidden' : ''}`}>
             {[...Array(10)].map((_, index) => (
                 <div
                     key={index}
@@ -52,14 +52,14 @@ const AboutAgency = () => {
             ))}
         </div>
 
-            <div className="max-w-7xl mx-auto flex flex-col gap-16 h-full relative z-10">
+            <div className="max-w-7xl mx-auto flex flex-col gap-8 lg:gap-16 h-full relative z-10">
                 {/* Top Section (only visible on mobile) */}
                 <div className="lg:hidden">
-                    <h2 className="text-3xl font-syne mb-8">About Our Agency</h2>
+                    <h2 className="text-2xl font-syne -mb-3 mt-6">About Our Agency</h2>
                 </div>
 
                 {/* Content Section */}
-                <div className="flex flex-col lg:flex-row gap-16 flex-1">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 flex-1">
                     {/* Left Section (hidden on mobile) */}
                     <div className="hidden lg:block lg:w-1/3 relative">
                         <div className="h-full flex flex-col justify-between lg:sticky lg:top-24">
@@ -79,9 +79,9 @@ const AboutAgency = () => {
 
                     {/* Right Section */}
                     <div className="lg:w-2/3">
-                        <div className="space-y-24">
+                        <div className="space-y-12 lg:space-y-24">
                             <div>
-                                <p className="text-2xl lg:text-3xl font-light mb-12 font-inter">
+                                <p className="text-xl lg:text-3xl font-light mb-6 lg:mb-12 font-inter">
                                     <span className="text-gray-400">Established in 2015, we have dedicated ourselves to</span>{" "}
                                     <span className="text-white">crafting captivating visual narratives</span>{" "}
                                     <span className="text-gray-400">defined by creativity, innovation, and an unwavering commitment to</span>{" "}
@@ -91,32 +91,32 @@ const AboutAgency = () => {
                                     Our mission is clear: to transform ideas into compelling visual stories. We believe that every project is an opportunity to create something extraordinary. Whether it's a corporate video, a commercial, an event coverage, or an animation, we approach each endeavor with creativity, enthusiasm, and a commitment to exceeding our clients' expectations.
                                 </p>
                             </div>
-                            <div className="grid grid-cols-2 gap-y-4 gap-x-0 mt-24">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 lg:mt-24">
                                 {/* Stats Items */}
-                                <div className="relative h-32">
-                                    <span className="absolute inset-0 text-[6rem] font-bold text-gray-500/60 pointer-events-none select-none">13+</span>
-                                    <h3 className="absolute inset-x-0 bottom-11 flex items-center text-md font-syne uppercase tracking-wider z-10 text-white">
+                                <div className="relative h-32 flex items-center justify-center">
+                                    <span className="absolute inset-0 text-[5.6rem] md:text-[6.5rem] font-bold text-gray-500/60 pointer-events-none select-none text-center">13+</span>
+                                    <h3 className="absolute text-md  md:bottom-10 bottom-11 font-bold font-syne uppercase tracking-wider z-10 text-white">
                                         Years of Experience
                                     </h3>
                                 </div>
                                 
-                                <div className="relative h-32">
-                                    <span className="absolute inset-0 text-[6rem] font-bold text-gray-500/60 pointer-events-none select-none">200+</span>
-                                    <h3 className="absolute inset-x-0 bottom-11 flex items-center text-md font-syne uppercase tracking-wider z-10 text-white">
+                                <div className="relative h-32 flex items-center justify-center">
+                                    <span className="absolute inset-0 text-[5.6rem] md:text-[6.5rem] font-bold text-gray-500/60 pointer-events-none select-none text-center">200+</span>
+                                    <h3 className="absolute text-md  md:bottom-10 bottom-11 font-bold font-syne uppercase tracking-wider z-10 text-white">
                                         Repeated Clients
                                     </h3>
                                 </div>
                                 
-                                <div className="relative h-32">
-                                    <span className="absolute inset-0 text-[6rem] font-bold text-gray-500/60 pointer-events-none select-none">478</span>
-                                    <h3 className="absolute inset-x-0 bottom-11 flex items-center text-md font-syne uppercase tracking-wider z-10 text-white">
+                                <div className="relative h-32 flex items-center justify-center">
+                                    <span className="absolute inset-0 text-[5.6rem] md:text-[6.5rem] font-bold text-gray-500/60 pointer-events-none select-none text-center">478</span>
+                                    <h3 className="absolute text-md  md:bottom-10 bottom-11 font-bold font-syne uppercase tracking-wider z-10 text-white">
                                         Completed Projects
                                     </h3>
                                 </div>
                                 
-                                <div className="relative h-32">
-                                    <span className="absolute inset-0 text-[6rem] font-bold text-gray-500/60 pointer-events-none select-none">350+</span>
-                                    <h3 className="absolute inset-x-0 bottom-11 flex items-center text-md font-syne uppercase tracking-wider z-10 text-white">
+                                <div className="relative h-32 flex items-center justify-center">
+                                    <span className="absolute inset-0 text-[5.6rem] md:text-[6.5rem] font-bold text-gray-500/60 pointer-events-none select-none text-center">350+</span>
+                                    <h3 className="absolute md:bottom-10 bottom-11 text-md font-bold font-syne uppercase tracking-wider z-10 text-white">
                                         Happy Clients
                                     </h3>
                                 </div>
@@ -126,7 +126,7 @@ const AboutAgency = () => {
                 </div>
 
                 {/* Bottom Button (only visible on mobile) */}
-                <div className="lg:hidden mt-8 text-center">
+                <div className="lg:hidden mt-6 text-center">
                     <GradientButton>
                         Know More About Us
                     </GradientButton>
