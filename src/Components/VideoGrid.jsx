@@ -78,7 +78,7 @@ const VideoGrid = () => {
                                 }`}
                             />
                             <div className={`absolute inset-0 bg-black transition-opacity duration-500 ${
-                                expandedCard === card.id ? 'opacity-80' : 'opacity-60'
+                                expandedCard === card.id ? 'opacity-80' : 'opacity-30'
                             }`}></div>
                             
                             <div className="absolute inset-0 p-4 flex flex-col justify-between">
@@ -115,7 +115,7 @@ const VideoGrid = () => {
                 <div className="col-span-6 row-span-1">
                     <div className="group relative h-80 bg-gray-800 rounded-lg overflow-hidden">
                         <img src={landscape1} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
-                        <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                         <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         {[...Array(10)].map((_, index) => (
@@ -143,7 +143,7 @@ const VideoGrid = () => {
                 <div className="col-span-3 row-span-1">
                     <div className="group relative h-80 bg-gray-800 rounded-lg overflow-hidden">
                         <img src={medium1} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
-                        <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                         <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         {[...Array(10)].map((_, index) => (
@@ -171,7 +171,7 @@ const VideoGrid = () => {
                 <div className="col-span-3 row-span-2">
                     <div className="group relative h-full bg-gray-800 rounded-lg overflow-hidden">
                         <img src={portrait} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
-                        <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                         <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         {[...Array(10)].map((_, index) => (
@@ -200,7 +200,7 @@ const VideoGrid = () => {
                 <div className="col-span-3 row-span-1">
                     <div className="group relative h-80 bg-gray-800 rounded-lg overflow-hidden">
                         <img src={medium2} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
-                        <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                         <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         {[...Array(10)].map((_, index) => (
@@ -228,7 +228,7 @@ const VideoGrid = () => {
                 <div className="col-span-6 row-span-1">
                     <div className="group relative h-80 bg-gray-800 rounded-lg overflow-hidden">
                         <img src={landscape2} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
-                        <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                         <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         {[...Array(10)].map((_, index) => (
@@ -257,7 +257,7 @@ const VideoGrid = () => {
                 <div className="col-span-6 row-span-1">
                     <div className="group relative h-80 bg-gray-800 rounded-lg overflow-hidden">
                         <img src={landscape3} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
-                        <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                         <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         {[...Array(10)].map((_, index) => (
@@ -285,7 +285,7 @@ const VideoGrid = () => {
                 <div className="col-span-6 row-span-1">
                     <div className="group relative h-80 bg-gray-800 rounded-lg overflow-hidden">
                         <img src={landscape4} alt="" className="w-full h-full object-cover rounded-lg opacity-75" />
-                        <div className="absolute inset-0 bg-black opacity-60 group-hover:opacity-95 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-95 transition-opacity duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                         <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         {[...Array(10)].map((_, index) => (
