@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { FiChevronLeft, FiChevronRight } from "lucide-react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import { AlertTriangle } from "lucide-react";
-
+import { FaQuoteRight } from "react-icons/fa";
+import bgimg from "../assets/bg/testmonialsBg.png";
 const testimonials = [
   {
     id: 1,
@@ -30,9 +30,10 @@ const testimonials = [
 const TestimonialCarousel = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [isMobile, setIsMobile] = useState(false);
-  const [dragStart, setDragStart] = useState(null);
-  const [dragEnd, setDragEnd] = useState(null);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
+  // Minimum swipe distance for swipe to fire (in px)
   const minSwipeDistance = 50;
 
   useEffect(() => {
@@ -56,22 +57,19 @@ const TestimonialCarousel = () => {
     }
   }, [page]);
 
-  const handleDragStart = (e) => {
-    const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-    setDragEnd(null);
-    setDragStart(clientX);
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleDragMove = (e) => {
-    if (!dragStart) return;
-    const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-    setDragEnd(clientX);
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  const handleDragEnd = () => {
-    if (!dragStart || !dragEnd) return;
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
     
-    const distance = dragStart - dragEnd;
+    const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
 
@@ -80,9 +78,6 @@ const TestimonialCarousel = () => {
     } else if (isRightSwipe) {
       paginate(-1);
     }
-
-    setDragStart(null);
-    setDragEnd(null);
   };
 
   const variants = {
@@ -102,7 +97,13 @@ const TestimonialCarousel = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-black bg-opacity-95 overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center bg-black" />
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${bgimg})`,
+          transform: "scale(1.1)",
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-10 md:py-20">
         <h1 className="text-white font-syne text-center text-2xl md:text-3xl font-semibold mb-10 md:mb-20">
@@ -114,12 +115,8 @@ const TestimonialCarousel = () => {
         <div className="relative max-w-[1400px] h-[600px] md:h-[500px] mx-auto">
           {!isMobile && (
             <>
-              <motion.div 
-                initial={{ opacity: 0.7, scale: 0.9, x: "-95%" }}
-                animate={{ opacity: 0.7, scale: 0.9, x: "-95%" }}
-                transition={{ duration: 0.8 }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-[rgba(255,255,255,0.05)] backdrop-blur-sm rounded-3xl p-8 border border-white/10"
-              >
+              {/* Previous Card */}
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[95%] w-[900px] h-[400px] bg-[rgba(255,255,255,0.05)] backdrop-blur-sm rounded-3xl p-8 border border-white/10 transform scale-90 opacity-70">
                 <div className="opacity-100">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="bg-white bg-opacity-20 px-4 py-2 rounded">
@@ -132,14 +129,10 @@ const TestimonialCarousel = () => {
                     {testimonials[(page - 1 + testimonials.length) % testimonials.length].text}
                   </p>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                initial={{ opacity: 0.7, scale: 0.9, x: "95%" }}
-                animate={{ opacity: 0.7, scale: 0.9, x: "95%" }}
-                transition={{ duration: 0.8 }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-[rgba(255,255,255,0.05)] backdrop-blur-sm rounded-3xl p-8 border border-white/10"
-              >
+              {/* Next Card */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[95%] w-[900px] h-[400px] bg-[rgba(255,255,255,0.05)] backdrop-blur-sm rounded-3xl p-8 border border-white/10 transform scale-90 opacity-70">
                 <div className="opacity-100">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="bg-white bg-opacity-20 px-4 py-2 rounded">
@@ -152,10 +145,11 @@ const TestimonialCarousel = () => {
                     {testimonials[(page + 1) % testimonials.length].text}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </>
           )}
 
+          {/* Current Card */}
           <div className="absolute w-full h-full flex items-center justify-center">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
@@ -166,19 +160,15 @@ const TestimonialCarousel = () => {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 150, damping: 30 },
-                  opacity: { duration: 0.5 },
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
                 }}
-                className="group absolute w-[80vw] md:w-[1100px] h-[400px] md:h-[530px] bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-3xl p-6 md:p-12 border border-white/30 overflow-hidden z-10 cursor-grab active:cursor-grabbing"
-                onTouchStart={handleDragStart}
-                onTouchMove={handleDragMove}
-                onTouchEnd={handleDragEnd}
-                onMouseDown={handleDragStart}
-                onMouseMove={handleDragMove}
-                onMouseUp={handleDragEnd}
-                onMouseLeave={handleDragEnd}
+                className="group absolute w-[80vw] md:w-[1100px] h-[400px] md:h-[530px] bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-3xl p-6 md:p-12 border border-white/30 overflow-hidden z-10"
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
 
                 <div className="flex items-center gap-4 mb-6 md:mb-8">
                   <div className="bg-white bg-opacity-20 px-3 md:px-4 py-1 md:py-2 rounded">
@@ -194,7 +184,7 @@ const TestimonialCarousel = () => {
                   </p>
 
                   <div className="absolute bottom-6 md:bottom-12 right-6 md:right-12 opacity-20">
-                    <AlertTriangle className="text-white text-4xl md:text-7xl" />
+                    <FaQuoteRight className="text-white text-4xl md:text-7xl" />
                   </div>
                 </div>
 
