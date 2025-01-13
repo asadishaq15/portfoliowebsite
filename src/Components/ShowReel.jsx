@@ -26,10 +26,8 @@ const ScrollModel = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Scene setup with environment
     sceneRef.current = new THREE.Scene();
     
-    // Enhanced camera settings
     cameraRef.current = new THREE.PerspectiveCamera(
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
@@ -37,7 +35,6 @@ const ScrollModel = () => {
       1000
     );
 
-    // Enhanced renderer setup with physically correct lighting
     rendererRef.current = new THREE.WebGLRenderer({ 
       antialias: true, 
       alpha: true,
@@ -58,10 +55,8 @@ const ScrollModel = () => {
     );
     containerRef.current.appendChild(rendererRef.current.domElement);
 
-    // Camera position
     cameraRef.current.position.z = 5;
 
-    // Enhanced lighting setup
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     
     const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
@@ -74,7 +69,6 @@ const ScrollModel = () => {
     const directionalLight3 = new THREE.DirectionalLight(0xffffff, 0.6);
     directionalLight3.position.set(2, -1, -1);
 
-    // Add subtle colored rim lights
     const rimLight1 = new THREE.PointLight(0x2196f3, 0.5);
     rimLight1.position.set(-3, 2, -2);
     
@@ -90,13 +84,11 @@ const ScrollModel = () => {
       rimLight2
     );
 
-    // Environment map for realistic reflections
     const pmremGenerator = new THREE.PMREMGenerator(rendererRef.current);
     pmremGenerator.compileEquirectangularShader();
 
-    // Load 3D Model with enhanced materials
     const loader = new GLTFLoader();
-    loader.load('/assets/iphone 16 screen.glb', (gltf) => {
+    loader.load('/assets/iphone 16 video.glb', (gltf) => {
       if (modelRef.current) {
         sceneRef.current.remove(modelRef.current);
         modelRef.current.traverse((child) => {
@@ -113,7 +105,6 @@ const ScrollModel = () => {
 
       modelRef.current = gltf.scene;
       
-      // Enhance materials
       modelRef.current.traverse((child) => {
         if (child.isMesh) {
           child.castShadow = true;
@@ -123,7 +114,6 @@ const ScrollModel = () => {
             child.material.envMapIntensity = 1.5;
             child.material.needsUpdate = true;
             
-            // Enhance metallic materials
             if (child.material.metalness) {
               child.material.metalness = 0.9;
               child.material.roughness = 0.1;
@@ -134,7 +124,6 @@ const ScrollModel = () => {
 
       sceneRef.current.add(modelRef.current);
       
-      // Center and scale the model
       const box = new THREE.Box3().setFromObject(modelRef.current);
       const center = box.getCenter(new THREE.Vector3());
       modelRef.current.position.sub(center);
@@ -147,7 +136,6 @@ const ScrollModel = () => {
       modelRef.current.rotation.y = Math.PI;
     });
 
-    // Cleanup function
     return () => {
       if (frameRef.current) {
         cancelAnimationFrame(frameRef.current);
@@ -178,15 +166,16 @@ const ScrollModel = () => {
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
       if (modelRef.current) {
-        // Changed the rotation range from (Math.PI, -Math.PI/2) to (Math.PI, -Math.PI)
-        // This will make the model rotate 360 degrees (full rotation)
-        const targetRotation = THREE.MathUtils.lerp(Math.PI, -Math.PI, latest);
+        // Adjust rotation speed based on device type
+        const startRotation = Math.PI;
+        const endRotation = -Math.PI * (isMobile ? 4 : 1); // Double the rotation range for mobile
+        const targetRotation = THREE.MathUtils.lerp(startRotation, endRotation, latest);
         modelRef.current.rotation.y = targetRotation;
       }
     });
   
     return () => unsubscribe();
-  }, [scrollYProgress]);
+  }, [scrollYProgress, isMobile]); // Added isMobile to dependencies
 
   useEffect(() => {
     const animate = () => {
