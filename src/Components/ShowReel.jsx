@@ -178,11 +178,13 @@ const ScrollModel = () => {
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
       if (modelRef.current) {
-        const targetRotation = THREE.MathUtils.lerp(Math.PI, 0, latest);
+        // Changed the rotation range from (Math.PI, -Math.PI/2) to (Math.PI, -Math.PI)
+        // This will make the model rotate 360 degrees (full rotation)
+        const targetRotation = THREE.MathUtils.lerp(Math.PI, -Math.PI, latest);
         modelRef.current.rotation.y = targetRotation;
       }
     });
-
+  
     return () => unsubscribe();
   }, [scrollYProgress]);
 
