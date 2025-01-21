@@ -11,6 +11,7 @@ import MarqueeText from '../Components/MarqueeText';
 import LogoMarquee from '../Components/LogoMarquee';
 import JourneySection from '../Components/Journey';
 import ScrollVideo from '../Components/ShowReel';
+import StudioComponent from '../Components/Studio';
 
 
 const LandingPage = () => {
@@ -25,6 +26,7 @@ const LandingPage = () => {
       <AboutAgency/>
       <TestimonialCarousel/>
       <BlogSection/>
+      <StudioComponent/>
       <MarqueeText/>
     </div>
   );
