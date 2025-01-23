@@ -51,7 +51,6 @@ function StudioComponent() {
               Book a Tour
             </GradientButton>
 
-            {/* Slider Container with Overflow */}
             <div className="relative overflow-visible">
               <div className="flex items-center justify-center gap-8 h-[400px] -mx-32">
                 {/* Previous Slide */}
