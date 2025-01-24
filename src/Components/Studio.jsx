@@ -66,7 +66,7 @@ function StudioComponent() {
                   />
                 </motion.div>
 
-                {/* Current Slide */}
+                
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentIndex}
