@@ -191,7 +191,7 @@ const PreProduction = () => {
                             <p className="text-gray-300 text-lg font-light font-inter mt-2">Before the cameras roll, the magic of video production begins with pre-production. This is where your ideas take shape, scripts are written, and plans are made. </p>
                             <h1 className="text-3xl text-start md:text-start  font-syne  w-full mt-2" ><span className="text-gray-500">Pre-production</span> is the critical planning phase where we lay the foundation for <br /> your video project. This stage involves:</h1>
                         </div>
-                            <div className="absolute bottom-0 left-0 w-full h-[350px]  overflow-hidden "
+                            <div className="md:absolute bottom-0 left-0 w-full h-[350px]  overflow-hidden "
 
                             >
                                 <motion.div

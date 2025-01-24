@@ -216,7 +216,7 @@ const Production = () => {
                             <p className="text-gray-300 text-lg font-light font-inter mt-2">The heart of video production lies in the production phase. This is where we turn your vision into reality. </p>
                             <h1 className="text-3xl text-start md:text-start  font-syne  w-full mt-2" ><span className="text-gray-500">Production</span> is where your video project comes to life. We offer a wide range of production services to bring your vision to the screen, includes</h1>
                         </div>
-                            <div className="absolute bottom-0 left-0 w-full h-[350px]  overflow-hidden "
+                            <div className="md:absolute bottom-0 left-0 w-full h-[350px]  overflow-hidden "
 
                             >
                                 <motion.div

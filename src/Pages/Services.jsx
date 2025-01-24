@@ -7,6 +7,7 @@ import StudioComponent from "../Components/Studio";
 import PreProduction from "../Components/ServicesPreproduction";
 import Production from "../Components/ServicesProduction";
 import Postproduction from "../Components/ServicesPostproduction";
+import Categories from "../Components/ServicesCategories";
 
 const Services = () => {
   return (
@@ -20,6 +21,8 @@ const Services = () => {
       <PreProduction />
       <Production />
       <Postproduction />
+      <Categories/>
+      
 
     </div>
   );

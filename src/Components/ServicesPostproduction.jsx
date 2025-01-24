@@ -191,7 +191,7 @@ const Postproduction = () => {
                             <p className="text-gray-300 text-lg font-light font-inter mt-2">The real magic happens in post-production. This is where we take the raw footage and craft it into a polished, engaging video.</p>
                             <h1 className="text-3xl text-start md:text-start  font-syne  w-full mt-2" ><span className="text-gray-500">Our post-production</span> services cover video editing, sound design, color correction, visual effects, and more. We pay meticulous attention to detail to ensure your video looks and sounds its best.</h1>
                         </div>
-                            <div className="absolute bottom-0 left-0 w-full h-[350px]  overflow-hidden "
+                            <div className="md:absolute bottom-0 left-0 w-full h-[350px]  overflow-hidden "
 
                             >
                                 <motion.div
