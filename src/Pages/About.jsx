@@ -12,6 +12,7 @@ import TeamMember from "../Components/TeamMember";
 import AboutAgency from "../Components/AboutAgency2";
 import MarqueeText from "../Components/MarqueeText";
 import TestimonialCarousel from "../Components/Testimonials";
+import MarqueeSection from "../Components/MarqueeSection";
 
 const About = () => {
   return (
@@ -22,6 +23,7 @@ const About = () => {
         description="Discover the Team That Adds a Dose of Fun to Video Production. This Is Us, the StoryStream Family, where passion meets pixels with a smile!"
       />
       <AboutAgency/>
+      <MarqueeSection/>
       <VerticalMarquee/>
   <TeamMember/>
   <HowWeWork/>

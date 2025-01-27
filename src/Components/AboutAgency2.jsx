@@ -27,7 +27,7 @@ const AboutAgency = () => {
       });
 
       tl.to(titleRef.current, {
-        y: window.innerHeight * 0.65,
+        y: window.innerHeight * 1.1,
         ease: "linear",
       });
 

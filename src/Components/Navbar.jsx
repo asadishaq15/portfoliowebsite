@@ -45,10 +45,10 @@ const Navbar = () => {
               <span className="absolute bottom-0 left-1/2 w-8 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
             </Link>
             <Link
-              to="/projects"
+              to="/portfolio"
               className="text-white relative group transition-all duration-500 font-syne text-base px-4 py-1.5 rounded-full before:content-[''] before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 hover:text-orange-500 before:opacity-0 hover:before:opacity-100 before:bg-white/20"
             >
-              Projects
+              Portfolio
               <span className="absolute bottom-0 left-1/2 w-8 h-0.5 bg-orange-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
             </Link>
             <Link
