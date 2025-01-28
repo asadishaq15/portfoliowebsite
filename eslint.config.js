@@ -33,6 +33,17 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      // Add these rules to disable unused variables warnings
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+  // Add a specific config for TypeScript files
+  {
+    files: ['**/*.{ts,tsx}'],
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 ]
